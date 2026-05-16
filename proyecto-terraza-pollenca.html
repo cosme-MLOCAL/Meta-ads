@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Terraza en Cubierta en Pollença · Reforma Vivienda con Vistas al Calvario · Gabriel Arquitectura</title>
+<meta name="description" content="Proyecto de ampliación de vivienda en Pollença, Mallorca. Apertura de cubierta, escalera interior con estructura metálica y roble, y terraza privada con vistas al Calvario y al Puig de Maria. Gabriel Cantarellas Reig, Arquitecto.">
+<meta name="keywords" content="arquitecto Pollença, terraza cubierta Mallorca, reforma vivienda Mallorca, ampliación cubierta Pollença, escalera interior vivienda, suelo técnico cubierta, arquitecto norte Mallorca">
+<meta name="author" content="Gabriel Cantarellas Reig — Gabriel Arquitectura">
+<link rel="canonical" href="https://gabrielarquitectura.com/proyectos/terraza-cubierta-pollenca">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Terraza en Cubierta con Vistas al Calvario · Pollença · Gabriel Arquitectura">
+<meta property="og:description" content="Reforma de vivienda en Pollença: apertura de cubierta, escalera de roble y terraza privada con vistas al Calvario y al Puig de Maria.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ArchitecturalObject",
+  "name": "Terraza en Cubierta · Pollença",
+  "description": "Ampliación de vivienda en segunda planta mediante apertura de cubierta. Escalera interior con estructura metálica y revestimiento de roble. Terraza privada con suelo técnico sobre plots y vistas al Calvario y Puig de Maria.",
+  "architect": {
+    "@type": "Person",
+    "name": "Gabriel Cantarellas Reig",
+    "jobTitle": "Arquitecto",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pollença",
+      "addressRegion": "Mallorca",
+      "addressCountry": "ES"
+    }
+  },
+  "locationCreated": {
+    "@type": "Place",
+    "name": "Pollença, Mallorca"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:  #0A0A0A;
+  --white:  #F6F6F4;
+  --g1:     #1C1C1C;
+  --g2:     #2E2E2E;
+  --g3:     #5A5A5A;
+  --g4:     #8A8A8A;
+  --g5:     #C8C8C8;
+  --g6:     #E8E8E8;
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --mono:   'DM Mono', monospace;
+  --ease:   cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.022; pointer-events: none; z-index: 9999;
+}
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+.reveal.on { opacity: 1; transform: none; }
+.reveal-l { opacity: 0; transform: translateX(-30px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+.reveal-l.on { opacity: 1; transform: none; }
+.reveal-r { opacity: 0; transform: translateX(30px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+.reveal-r.on { opacity: 1; transform: none; }
+
+/* ── NAV ─────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem clamp(1.5rem, 5vw, 4rem);
+  transition: background 0.5s ease, border-color 0.5s ease;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(246,246,244,0.95);
+  backdrop-filter: blur(14px);
+  border-color: var(--g6);
+}
+.nav__logo {
+  font-family: var(--serif); font-size: 1.15rem;
+  font-weight: 400; letter-spacing: -0.01em; color: var(--white);
+  transition: color 0.4s ease;
+}
+.nav.scrolled .nav__logo { color: var(--black); }
+.nav__back {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--g4); transition: color 0.3s ease;
+}
+.nav__back::before { content: '←'; transition: transform 0.3s ease; }
+.nav__back:hover { color: var(--white); }
+.nav.scrolled .nav__back:hover { color: var(--black); }
+.nav__back:hover::before { transform: translateX(-4px); }
+.nav__cta {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.1em; color: var(--g4);
+  border: 1px solid var(--g2); padding: 0.5rem 1.1rem;
+  transition: all 0.3s ease;
+}
+.nav__cta:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+.nav.scrolled .nav__cta { border-color: var(--g6); color: var(--black); }
+.nav.scrolled .nav__cta:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 600px;
+  overflow: hidden; background: var(--black);
+}
+
+.hero__img {
+  width: 100%; height: 120%;
+  object-fit: cover;
+  /* FOTO 3: terraza con vistas al Calvario y cielo azul — la más impactante */
+  background: linear-gradient(170deg, #3a3832 0%, #1c1c1a 100%);
+  transform-origin: center;
+  transition: filter 0.5s ease;
+}
+.hero__placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(170deg, #3a3832 0%, #1c1c1a 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero__placeholder span {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--g2);
+}
+
+/* Overlay degradado */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.1) 40%,
+    rgba(0,0,0,0.6) 100%
+  );
+  z-index: 1;
+}
+
+.hero__content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  z-index: 2;
+  padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero__breadcrumb {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 1.5rem;
+  opacity: 0; transition: opacity 0.8s ease 0.5s;
+}
+.hero.loaded .hero__breadcrumb { opacity: 1; }
+.hero__breadcrumb span { color: rgba(255,255,255,0.2); }
+
+.hero__clip { overflow: hidden; display: block; }
+.hero__title-line {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 7.5rem);
+  font-weight: 300; line-height: 0.92;
+  letter-spacing: -0.04em; color: var(--white);
+  transform: translateY(110%);
+  transition: transform 1s var(--ease);
+}
+.hero__title-line:nth-child(2) { transition-delay: 0.12s; font-style: italic; color: rgba(255,255,255,0.6); }
+.hero.loaded .hero__title-line { transform: none; }
+
+.hero__meta-row {
+  display: flex; align-items: center; gap: 2rem;
+  margin-top: 2rem; flex-wrap: wrap;
+  opacity: 0; transition: opacity 0.8s ease 0.9s;
+}
+.hero.loaded .hero__meta-row { opacity: 1; }
+.hero__meta-item {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.hero__meta-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.15); }
+
+/* ── FICHA TÉCNICA ───────────────────────────────── */
+.specs {
+  background: var(--black);
+  border-top: 1px solid var(--g2);
+  padding: 3rem clamp(1.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+.spec__label {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--g3); margin-bottom: 0.5rem;
+}
+.spec__value {
+  font-family: var(--sans); font-size: 0.88rem;
+  font-weight: 400; color: var(--white);
+}
+
+/* ── INTRO ───────────────────────────────────────── */
+.intro {
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: start;
+  background: var(--white);
+}
+
+.intro__aside {
+  position: sticky; top: 120px;
+}
+.intro__aside-num {
+  font-family: var(--serif); font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 300; font-style: italic;
+  color: var(--g6); line-height: 1; letter-spacing: -0.05em;
+  margin-bottom: 2rem;
+}
+.intro__aside-label {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--g4); margin-bottom: 1rem;
+}
+.intro__aside-tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.intro__tag {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--g4); border: 1px solid var(--g6);
+  padding: 0.3rem 0.6rem;
+}
+
+.intro__body {}
+.intro__heading {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+  font-weight: 400; line-height: 1.1;
+  letter-spacing: -0.03em; color: var(--black);
+  margin-bottom: 2.5rem;
+}
+.intro__heading em { font-style: italic; color: var(--g3); }
+.intro__text {
+  font-family: var(--sans); font-size: 1.05rem;
+  font-weight: 300; line-height: 1.85;
+  color: var(--g3); margin-bottom: 1.5rem;
+}
+.intro__text strong { color: var(--black); font-weight: 400; }
+.intro__text:last-child { margin: 0; }
+
+/* ── GALERÍA ─────────────────────────────────────── */
+
+/* Foto 1 — full width impactante */
+.gallery-full {
+  width: 100%;
+  aspect-ratio: 16/7;
+  overflow: hidden;
+  background: var(--g1);
+  position: relative;
+}
+.gallery-full img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.gallery-full:hover img { transform: scale(1.03); }
+.photo-caption {
+  position: absolute; bottom: 1.5rem; right: 2rem;
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); z-index: 2;
+}
+
+/* Galería 2 fotos lado a lado */
+.gallery-duo {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.gallery-duo .photo {
+  aspect-ratio: 4/5;
+  overflow: hidden; background: var(--g1); position: relative;
+}
+.gallery-duo .photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.gallery-duo .photo:hover img { transform: scale(1.04); }
+
+/* Galería asimétrica 1+2 */
+.gallery-asym {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+.gallery-asym .photo-main {
+  grid-column: 1; grid-row: 1 / 3;
+  overflow: hidden; background: var(--g1); position: relative;
+  aspect-ratio: 3/4;
+}
+.gallery-asym .photo-main img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.gallery-asym .photo-main:hover img { transform: scale(1.04); }
+.gallery-asym .photo-sm {
+  grid-column: 2;
+  overflow: hidden; background: var(--g1); position: relative;
+  aspect-ratio: 4/3;
+}
+.gallery-asym .photo-sm img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.gallery-asym .photo-sm:hover img { transform: scale(1.04); }
+
+/* Placeholder de foto */
+.photo-ph {
+  width: 100%; height: 100%;
+  background: var(--g1);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem;
+}
+.photo-ph__n {
+  font-family: var(--serif); font-size: 3rem;
+  font-weight: 300; font-style: italic; color: var(--g2);
+}
+.photo-ph__l {
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--g3);
+  text-align: center; padding: 0 1rem;
+}
+
+/* Espaciado secciones de galería */
+.gallery-full,
+.gallery-duo,
+.gallery-asym { margin: 1rem 0; }
+.gallery-wrap {
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+}
+
+/* ── TEXTO INTERMEDIO ────────────────────────────── */
+.interlude {
+  background: var(--black);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+.interlude__label {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--g3); display: flex; align-items: center; gap: 1rem;
+}
+.interlude__label::before { content: ''; width: 20px; height: 1px; background: var(--g3); }
+.interlude__quote {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 3.2rem);
+  font-weight: 300; font-style: italic;
+  line-height: 1.2; letter-spacing: -0.02em;
+  color: var(--white);
+}
+.interlude__quote em { font-style: normal; color: var(--g4); }
+
+/* ── DETALLES CONSTRUCTIVOS ──────────────────────── */
+.details {
+  background: var(--g6);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+}
+.details__title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 400; letter-spacing: -0.02em;
+  color: var(--black); margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.details__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.detail-item {
+  background: var(--g6); padding: 2rem 1.5rem;
+  transition: background 0.3s ease;
+}
+.detail-item:hover { background: white; }
+.detail-item__icon {
+  font-family: var(--serif); font-size: 2.5rem;
+  font-weight: 300; font-style: italic;
+  color: var(--black); margin-bottom: 1rem; line-height: 1;
+}
+.detail-item__title {
+  font-family: var(--sans); font-size: 0.9rem;
+  font-weight: 500; color: var(--black); margin-bottom: 0.6rem;
+}
+.detail-item__desc {
+  font-family: var(--sans); font-size: 0.82rem;
+  font-weight: 300; line-height: 1.7; color: var(--g3);
+}
+
+/* ── CTA SIGUIENTE PROYECTO ──────────────────────── */
+.next-project {
+  background: var(--black);
+  padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+  border-top: 1px solid var(--g2);
+  cursor: pointer; position: relative; overflow: hidden;
+  transition: background 0.5s ease;
+}
+.next-project:hover { background: var(--g1); }
+.next-project__label {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--g3);
+  margin-bottom: 0.8rem;
+}
+.next-project__title {
+  font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 3.5rem);
+  font-weight: 300; font-style: italic; color: var(--white);
+  letter-spacing: -0.03em;
+}
+.next-project__arrow {
+  font-family: var(--serif); font-size: clamp(2rem, 4vw, 5rem);
+  color: var(--g3); transition: transform 0.4s var(--ease), color 0.3s ease;
+}
+.next-project:hover .next-project__arrow { transform: translateX(15px); color: var(--white); }
+
+/* ── FOOTER ──────────────────────────────────────── */
+.footer {
+  background: var(--g1);
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--g2);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer__brand {
+  font-family: var(--serif); font-size: 0.95rem;
+  font-weight: 400; color: var(--white);
+}
+.footer__links {
+  display: flex; gap: 2rem;
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--g3);
+}
+.footer__links a:hover { color: var(--white); }
+
+/* ── CURSOR ──────────────────────────────────────── */
+.c-dot {
+  position: fixed; width: 5px; height: 5px;
+  background: var(--white); border-radius: 50%;
+  pointer-events: none; z-index: 10000;
+  transform: translate(-50%,-50%); mix-blend-mode: difference;
+}
+.c-ring {
+  position: fixed; width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width 0.4s var(--ease), height 0.4s var(--ease);
+  mix-blend-mode: difference;
+}
+.c-ring.big { width: 70px; height: 70px; }
+@media (hover:none) { .c-dot,.c-ring { display:none; } }
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .intro { grid-template-columns: 1fr; }
+  .intro__aside { position: static; display: flex; align-items: baseline; gap: 2rem; }
+  .intro__aside-num { font-size: 3rem; margin: 0; }
+  .interlude { grid-template-columns: 1fr; }
+  .gallery-asym { grid-template-columns: 1fr; }
+  .gallery-asym .photo-main { grid-row: 1; aspect-ratio: 16/9; }
+  .gallery-asym .photo-sm { grid-column: 1; aspect-ratio: 4/3; }
+  .details__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .nav__back-text { display: none; }
+  .gallery-duo { grid-template-columns: 1fr; }
+  .gallery-duo .photo { aspect-ratio: 4/3; }
+  .details__grid { grid-template-columns: 1fr; }
+  .specs { grid-template-columns: 1fr 1fr; }
+  .gallery-full { aspect-ratio: 4/3; }
+}
+</style>
+</head>
+<body>
+
+<div class="c-dot" id="cdot"></div>
+<div class="c-ring" id="cring"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav__logo">Gabriel Arquitectura</a>
+  <a href="/proyectos" class="nav__back">
+    <span class="nav__back-text">Todos los proyectos</span>
+  </a>
+  <a href="tel:622149939" class="nav__cta">622 14 99 39</a>
+</nav>
+
+
+<!-- HERO — Foto más impactante: terraza con vistas montaña y cielo azul -->
+<section class="hero" id="hero">
+
+  <!-- AQUÍ VA FOTO 3: terraza exterior con mesa, montaña y cielo azul -->
+  <div class="hero__img">
+    <div class="hero__placeholder">
+      <span>Foto 3 — Terraza con vistas al Calvario y Puig de Maria</span>
+    </div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__breadcrumb">
+      Proyectos <span>/</span> Reforma · Pollença <span>/</span> Terraza en cubierta
+    </div>
+    <h1>
+      <span class="hero__clip">
+        <span class="hero__title-line">Terraza en cubierta</span>
+      </span>
+      <span class="hero__clip">
+        <span class="hero__title-line">sobre Pollença</span>
+      </span>
+    </h1>
+    <div class="hero__meta-row">
+      <span class="hero__meta-item">Pollença · Mallorca</span>
+      <span class="hero__meta-sep"></span>
+      <span class="hero__meta-item">Reforma y ampliación</span>
+      <span class="hero__meta-sep"></span>
+      <span class="hero__meta-item">Vivienda 2ª planta</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- FICHA TÉCNICA -->
+<div class="specs">
+  <div>
+    <div class="spec__label">Tipo de proyecto</div>
+    <div class="spec__value">Reforma y ampliación en cubierta</div>
+  </div>
+  <div>
+    <div class="spec__label">Ubicación</div>
+    <div class="spec__value">Pollença, Mallorca</div>
+  </div>
+  <div>
+    <div class="spec__label">Uso</div>
+    <div class="spec__value">Residencial — Vivienda privada</div>
+  </div>
+  <div>
+    <div class="spec__label">Servicios</div>
+    <div class="spec__value">Proyecto · Dirección de obra · Licencia</div>
+  </div>
+  <div>
+    <div class="spec__label">Estudio</div>
+    <div class="spec__value">Gabriel Cantarellas Reig</div>
+  </div>
+</div>
+
+
+<!-- INTRO TEXTO -->
+<article class="intro">
+
+  <aside class="intro__aside reveal-l">
+    <div class="intro__aside-num">01</div>
+    <div class="intro__aside-label">Categorías</div>
+    <div class="intro__aside-tags">
+      <span class="intro__tag">Reforma</span>
+      <span class="intro__tag">Cubierta</span>
+      <span class="intro__tag">Interiorismo</span>
+      <span class="intro__tag">Mallorca</span>
+      <span class="intro__tag">Pollença</span>
+    </div>
+  </aside>
+
+  <div class="intro__body reveal" style="transition-delay:.15s">
+    <h2 class="intro__heading">
+      Maximizar el potencial<br>
+      <em>de lo que ya existe.</em>
+    </h2>
+
+    <p class="intro__text">
+      En esta vivienda en planta segunda, la propiedad tenía ante sí una oportunidad poco frecuente: <strong>una cubierta sin uso accesible, con vistas privilegiadas sobre los tejados de Pollença</strong>, el Calvario al norte y el Puig de Maria al sur.
+    </p>
+
+    <p class="intro__text">
+      Tras llegar a un acuerdo con la comunidad para el uso privado de su parte proporcional de cubierta, el reto técnico y de diseño fue claro: <strong>crear un acceso interior a través de un hueco de escalera nuevo</strong>, sin que el edificio dispusiera de ninguna comunicación comunitaria con la cubierta. El resultado tenía que ser útil, bello y coherente con el interior de la vivienda.
+    </p>
+
+    <p class="intro__text">
+      La solución fue ingeniosa: <strong>el hueco de escalera se aprovecha íntegramente como mueble de cocina</strong>, integrando electrodomésticos y almacenaje en la estructura portante. Nada se desperdicia. La escalera, de estructura metálica revestida con madera de roble, conecta de forma natural los dos niveles y se convierte en un elemento de diseño propio.
+    </p>
+
+    <p class="intro__text">
+      En cubierta, la terraza se construye sobre <strong>plots con suelo técnico</strong>, mejorando el aislamiento del forjado y permitiendo el paso de instalaciones. El resultado es un espacio exterior de uso privado con <strong>vistas a 360° sobre el pueblo, la sierra del Calvario y el Puig de Maria</strong>: una terraza donde cenar en las noches de verano o hacer deporte cuando el exterior de la ciudad no es opción.
+    </p>
+
+    <p class="intro__text">
+      El proyecto tuvo un efecto inmediato: <strong>el vecino de escalera, al ver la transformación, encargó al estudio el mismo proyecto para su parte de cubierta</strong>. Pronto veremos los resultados.
+    </p>
+  </div>
+
+</article>
+
+
+<!-- GALERÍA — Foto 3 full width (la mejor vista exterior) -->
+<div class="gallery-wrap">
+  <div class="gallery-full reveal">
+    <!-- AQUÍ VA FOTO 3: terraza exterior con mesas, plantas y montaña -->
+    <div style="width:100%;height:100%">
+      <div class="photo-ph">
+        <div class="photo-ph__n">03</div>
+        <div class="photo-ph__l">Terraza cubierta · Vistas al Calvario y Puig de Maria · foto exterior día</div>
+      </div>
+    </div>
+    <div class="photo-caption">Terraza · Pollença · Mallorca</div>
+  </div>
+</div>
+
+
+<!-- INTERLUDE — cita del proyecto -->
+<div class="interlude">
+  <div class="interlude__label reveal-l">El concepto</div>
+  <blockquote class="interlude__quote reveal" style="transition-delay:.15s">
+    "El hueco de la escalera se convierte en mueble de cocina. <em>Nada se pierde. Todo se transforma.</em>"
+  </blockquote>
+</div>
+
+
+<!-- GALERÍA DÚO — Foto 4 y Foto 5 (dos vistas de terraza) -->
+<div class="gallery-wrap">
+  <div class="gallery-duo">
+
+    <div class="photo reveal-l">
+      <!-- AQUÍ VA FOTO 4: terraza con plantas y palmera, ángulo lateral -->
+      <div class="photo-ph">
+        <div class="photo-ph__n">04</div>
+        <div class="photo-ph__l">Terraza · palmera y cactus · tarde</div>
+      </div>
+    </div>
+
+    <div class="photo reveal-r" style="transition-delay:.1s">
+      <!-- AQUÍ VA FOTO 5: vista aérea de la terraza y el edificio -->
+      <div class="photo-ph">
+        <div class="photo-ph__n">05</div>
+        <div class="photo-ph__l">Vista aérea · terraza sobre tejados de Pollença</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- DETALLES CONSTRUCTIVOS -->
+<section class="details">
+  <h2 class="details__title reveal">Soluciones constructivas</h2>
+  <div class="details__grid">
+
+    <div class="detail-item reveal-l">
+      <div class="detail-item__icon">Es</div>
+      <div class="detail-item__title">Escalera interior</div>
+      <div class="detail-item__desc">Estructura metálica lacada en negro con peldaños y pasamanos revestidos en madera de roble macizo. El hueco se aprovecha como columna de almacenaje y mueble de cocina integrado.</div>
+    </div>
+
+    <div class="detail-item reveal" style="transition-delay:.1s">
+      <div class="detail-item__icon">Cu</div>
+      <div class="detail-item__title">Cubierta transitable</div>
+      <div class="detail-item__desc">Terraza construida sobre sistema de plots regulables con suelo técnico en porcelánico de gran formato. Mejora el aislamiento térmico del forjado y permite el registro de instalaciones.</div>
+    </div>
+
+    <div class="detail-item reveal-r" style="transition-delay:.2s">
+      <div class="detail-item__icon">Vi</div>
+      <div class="detail-item__title">Vistas 360°</div>
+      <div class="detail-item__desc">Al norte, el Calvario de Pollença. Al sur, el Puig de Maria. Una terraza privada sobre los tejados del casco histórico: un espacio que multiplica la superficie habitable y la calidad de vida.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- GALERÍA ASIMÉTRICA — Foto 2 (puerta terraza al atardecer) + Foto 1 (cocina/escalera) -->
+<div class="gallery-wrap">
+  <div class="gallery-asym">
+
+    <div class="photo-main reveal-l">
+      <!-- AQUÍ VA FOTO 2: vista desde interior hacia la terraza al atardecer, puerta abierta -->
+      <div class="photo-ph">
+        <div class="photo-ph__n">02</div>
+        <div class="photo-ph__l">Acceso a terraza · puerta abierta · luz de atardecer · campanario al fondo</div>
+      </div>
+    </div>
+
+    <div class="photo-sm reveal-r" style="transition-delay:.1s">
+      <!-- AQUÍ VA FOTO 1: interior cocina con escalera integrada -->
+      <div class="photo-ph">
+        <div class="photo-ph__n">01</div>
+        <div class="photo-ph__l">Interior · cocina integrada en hueco de escalera · madera de roble</div>
+      </div>
+    </div>
+
+    <div class="photo-sm reveal-r" style="transition-delay:.2s">
+      <!-- Foto adicional si tienes más imágenes -->
+      <div class="photo-ph">
+        <div class="photo-ph__n">+</div>
+        <div class="photo-ph__l">Foto adicional opcional</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- SIGUIENTE PROYECTO -->
+<a href="/proyectos" class="next-project reveal">
+  <div>
+    <div class="next-project__label">Siguiente proyecto</div>
+    <div class="next-project__title">Ver todos los proyectos</div>
+  </div>
+  <div class="next-project__arrow">→</div>
+</a>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__brand">Gabriel Cantarellas Reig · Arquitecte · Pollença, Mallorca</div>
+  <div class="footer__links">
+    <a href="tel:622149939">622 14 99 39</a>
+    <a href="mailto:oficina@gabrielarquitectura.com">oficina@gabrielarquitectura.com</a>
+    <a href="/proyectos">Proyectos</a>
+  </div>
+</footer>
+
+
+<script>
+/* Hero */
+window.addEventListener('load', function () {
+  requestAnimationFrame(function () { document.getElementById('hero').classList.add('loaded'); });
+});
+
+/* Nav */
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function () {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+}, { passive: true });
+
+/* Reveal */
+var obs = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function (el) { obs.observe(el); });
+
+/* Parallax hero */
+var heroImg = document.querySelector('.hero__img');
+if (heroImg && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+  window.addEventListener('scroll', function () {
+    heroImg.style.transform = 'translateY(' + window.scrollY * 0.2 + 'px)';
+  }, { passive: true });
+}
+
+/* Cursor */
+var dot = document.getElementById('cdot'), ring = document.getElementById('cring');
+var mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', function (e) {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+});
+(function loop() {
+  rx += (mx - rx) * 0.1; ry += (my - ry) * 0.1;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(loop);
+})();
+document.querySelectorAll('a, .photo, .detail-item').forEach(function (el) {
+  el.addEventListener('mouseenter', function () { ring.classList.add('big'); });
+  el.addEventListener('mouseleave', function () { ring.classList.remove('big'); });
+});
+</script>
+
+</body>
+</html>
