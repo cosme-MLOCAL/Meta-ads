@@ -1,0 +1,142 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: '#F5F2ED',
+        'text-primary': '#1A1A18',
+        'text-secondary': '#8A8678',
+        accent: '#C4A882',
+        deep: '#2C2B27',
+        'off-white': '#FDFCF9',
+        stone: {
+          50: '#FDFCF9',
+          100: '#F5F2ED',
+          200: '#EAE6DF',
+          300: '#D4CFC5',
+          400: '#B8B2A7',
+          500: '#8A8678',
+          600: '#6B6760',
+          700: '#4A4840',
+          800: '#2C2B27',
+          900: '#1A1A18',
+        },
+        sand: {
+          DEFAULT: '#C4A882',
+          light: '#D4BC9A',
+          dark: '#A88E68',
+        },
+      },
+      fontFamily: {
+        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-dm-mono)', 'monospace'],
+      },
+      fontSize: {
+        'display-xl': ['clamp(4rem, 9vw, 10rem)', { lineHeight: '0.95', letterSpacing: '-0.03em' }],
+        'display-lg': ['clamp(3rem, 7vw, 8rem)', { lineHeight: '1', letterSpacing: '-0.02em' }],
+        'display-md': ['clamp(2rem, 5vw, 5rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        'display-sm': ['clamp(1.5rem, 3.5vw, 3.5rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+        'manifesto': ['clamp(1.5rem, 3.5vw, 3.5rem)', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'label': ['0.6875rem', { lineHeight: '1.5', letterSpacing: '0.15em' }],
+        'caption': ['0.75rem', { lineHeight: '1.6', letterSpacing: '0.08em' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '30': '7.5rem',
+        '34': '8.5rem',
+        '38': '9.5rem',
+        '42': '10.5rem',
+        '50': '12.5rem',
+        '60': '15rem',
+        '72': '18rem',
+        '80': '20rem',
+        '88': '22rem',
+        '96': '24rem',
+        '104': '26rem',
+        '112': '28rem',
+        '120': '30rem',
+        '128': '32rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      animation: {
+        'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'fade-in': 'fadeIn 0.6s ease forwards',
+        'slide-left': 'slideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'slide-right': 'slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'scale-in': 'scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'draw-line': 'drawLine 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'cursor-pulse': 'cursorPulse 0.3s ease',
+      },
+      keyframes: {
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-60px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideRight: {
+          '0%': { opacity: '0', transform: 'translateX(60px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.92)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        drawLine: {
+          '0%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+          '100%': { transform: 'scaleX(1)', transformOrigin: 'left' },
+        },
+        cursorPulse: {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(0.85)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      transitionTimingFunction: {
+        'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'expo-in-out': 'cubic-bezier(0.87, 0, 0.13, 1)',
+        'circ-out': 'cubic-bezier(0, 0.55, 0.45, 1)',
+      },
+      transitionDuration: {
+        '400': '400ms',
+        '600': '600ms',
+        '800': '800ms',
+        '1000': '1000ms',
+        '1200': '1200ms',
+      },
+      backgroundImage: {
+        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
+        'blueprint': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23C4A882' stroke-width='0.5' opacity='0.2'%3E%3Cpath d='M0 30h60M30 0v60M0 0h60v60H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+      },
+      gridTemplateColumns: {
+        '14': 'repeat(14, minmax(0, 1fr))',
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
+      aspectRatio: {
+        '3/4': '3 / 4',
+        '4/3': '4 / 3',
+        '16/9': '16 / 9',
+        '1/1': '1 / 1',
+        '2/3': '2 / 3',
+        '5/4': '5 / 4',
+      },
+    },
+  },
+  plugins: [],
+}
