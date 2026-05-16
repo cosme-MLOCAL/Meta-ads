@@ -4,434 +4,329 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gabriel Cantarellas Reig — Arquitecto en Mallorca</title>
-<meta name="description" content="Estudio de arquitectura en Pollensa, Mallorca. Proyectos de vivienda, reformas sostenibles, diseño de interiores y gestión de licencias. Gabriel Cantarellas Reig, arquitecto.">
+<meta name="description" content="Arquitecto en Pollensa, Mallorca. Proyectos de vivienda, reformas sostenibles, diseño de interiores y gestión de licencias. Gabriel Cantarellas Reig.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ══════════════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════════════ */
 :root {
-  --bg:     #F5F2ED;
-  --text:   #1A1A18;
-  --muted:  #8A8678;
-  --accent: #C4A882;
-  --deep:   #2C2B27;
-  --white:  #FDFCF9;
-  --serif:  'Cormorant Garamond', Georgia, serif;
-  --sans:   'DM Sans', system-ui, sans-serif;
-  --mono:   'DM Mono', monospace;
-  --ease:   cubic-bezier(0.16, 1, 0.3, 1);
+  --black:   #0A0A0A;
+  --white:   #F6F6F4;
+  --gray-1:  #1C1C1C;
+  --gray-2:  #2E2E2E;
+  --gray-3:  #5A5A5A;
+  --gray-4:  #8A8A8A;
+  --gray-5:  #C8C8C8;
+  --gray-6:  #E8E8E8;
+  --serif:   'Cormorant Garamond', Georgia, serif;
+  --sans:    'DM Sans', system-ui, sans-serif;
+  --mono:    'DM Mono', monospace;
+  --ease:    cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--sans);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
 
+/* Grain sutil */
 body::after {
   content: '';
   position: fixed; inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.032;
-  pointer-events: none;
-  z-index: 9999;
+  opacity: 0.025; pointer-events: none; z-index: 9999;
 }
 
-img { display: block; max-width: 100%; }
-a { text-decoration: none; color: inherit; }
-
-.reveal {
-  opacity: 0; transform: translateY(40px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-}
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-left {
-  opacity: 0; transform: translateX(-50px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-}
-.reveal-left.visible { opacity: 1; transform: none; }
-.reveal-right {
-  opacity: 0; transform: translateX(50px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-}
-.reveal-right.visible { opacity: 1; transform: none; }
+/* Animaciones scroll */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+.reveal.on { opacity: 1; transform: none; }
+.reveal-l { opacity: 0; transform: translateX(-40px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+.reveal-l.on { opacity: 1; transform: none; }
+.reveal-r { opacity: 0; transform: translateX(40px); transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); }
+.reveal-r.on { opacity: 1; transform: none; }
 
 
 /* ══════════════════════════════════════════════════
-   NAVEGACIÓN
+   NAV
 ══════════════════════════════════════════════════ */
 .nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem clamp(1.5rem, 5vw, 4rem);
+  transition: background 0.5s ease, border-color 0.5s ease;
   border-bottom: 1px solid transparent;
 }
-.nav.scrolled {
-  background: rgba(245,242,237,0.93);
+.nav.dark { background: var(--black); }
+.nav.light {
+  background: rgba(246,246,244,0.94);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-color: rgba(196,168,130,0.2);
+  border-color: var(--gray-6);
 }
 
 .nav__logo {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  line-height: 1;
-}
-.nav__logo-primary {
   font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--text);
+  font-size: 1.25rem; font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: color 0.4s ease;
 }
-.nav__logo-sep {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  color: var(--accent);
-  font-weight: 300;
-}
-.nav__logo-location {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+.nav.light .nav__logo { color: var(--black); }
 
-.nav__links {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  list-style: none;
-}
+.nav__links { display: flex; gap: 2.5rem; list-style: none; }
 .nav__links a {
-  font-family: var(--sans);
-  font-size: 0.73rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text);
+  font-family: var(--sans); font-size: 0.7rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gray-4);
+  transition: color 0.3s ease;
   position: relative;
 }
 .nav__links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
-  background: var(--accent);
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 0; height: 1px; background: currentColor;
   transition: width 0.3s ease;
 }
+.nav__links a:hover { color: var(--white); }
 .nav__links a:hover::after { width: 100%; }
+.nav.light .nav__links a:hover { color: var(--black); }
 
 .nav__cta {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-  border: 1px solid rgba(26,26,24,0.3);
-  padding: 0.55rem 1.2rem;
+  font-family: var(--mono); font-size: 0.65rem;
+  letter-spacing: 0.1em; color: var(--gray-4);
+  border: 1px solid var(--gray-2);
+  padding: 0.5rem 1.1rem;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-.nav__cta:hover {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
-}
+.nav__cta:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+.nav.light .nav__cta { border-color: var(--gray-6); color: var(--black); }
+.nav.light .nav__cta:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 
 
 /* ══════════════════════════════════════════════════
-   HERO
+   HERO — NEGRO PURO
 ══════════════════════════════════════════════════ */
 .hero {
-  position: relative;
+  background: var(--black);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: var(--bg);
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
 }
 
-.hero__year {
-  position: absolute;
-  top: 8vh; right: -0.02em;
-  font-family: var(--serif);
-  font-size: clamp(8rem, 22vw, 22rem);
-  font-weight: 300;
-  line-height: 1;
-  color: var(--accent);
-  opacity: 0;
-  letter-spacing: -0.05em;
-  user-select: none; pointer-events: none;
-  white-space: nowrap; z-index: 0;
-  transform: translateX(20px);
-  transition: opacity 2s ease 0.5s, transform 2s var(--ease) 0.5s;
+/* Líneas de grid arquitectónico */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
 }
-.hero.loaded .hero__year { opacity: 0.065; transform: none; }
-
-/* Subtexto geográfico diagonal */
-.hero__geo {
-  position: absolute;
-  left: clamp(1.5rem, 5vw, 4rem);
-  bottom: calc(62vh + 6vw + 2rem);
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  opacity: 0;
-  transition: opacity 0.8s ease 1.3s;
-  z-index: 3;
-}
-.hero.loaded .hero__geo { opacity: 1; }
 
 .hero__content {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  position: relative; z-index: 2;
+  flex: 1; display: flex; flex-direction: column;
   justify-content: flex-end;
-  padding: calc(80px + 7vw) clamp(1.5rem, 5vw, 4rem) 5vw;
+  padding: calc(80px + 8vw) clamp(1.5rem, 5vw, 4rem) 5vw;
 }
 
-.hero__label {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2.5rem;
+.hero__tag {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gray-3); margin-bottom: 3rem;
+  display: flex; align-items: center; gap: 1rem;
   opacity: 0; transform: translateY(10px);
-  transition: opacity 0.8s ease 0.3s, transform 0.8s var(--ease) 0.3s;
+  transition: opacity 0.7s ease 0.3s, transform 0.7s var(--ease) 0.3s;
 }
-.hero.loaded .hero__label { opacity: 1; transform: none; }
+.hero__tag::before {
+  content: ''; width: 24px; height: 1px; background: var(--gray-3);
+}
+.hero.loaded .hero__tag { opacity: 1; transform: none; }
 
-.hero__title { overflow: hidden; margin: 0; }
 .hero__clip { overflow: hidden; display: block; }
 
 .hero__line1 {
   display: block;
   font-family: var(--serif);
-  font-size: clamp(4rem, 9vw, 11rem);
-  font-weight: 400; font-style: normal;
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  color: var(--text);
+  font-size: clamp(4.5rem, 10vw, 13rem);
+  font-weight: 300; font-style: normal;
+  line-height: 0.9; letter-spacing: -0.04em;
+  color: var(--white);
   transform: translateY(110%);
-  transition: transform 1s var(--ease) 0.4s;
+  transition: transform 1.1s var(--ease) 0.4s;
 }
 .hero.loaded .hero__line1 { transform: none; }
 
-.hero__line2-wrap {
-  overflow: hidden; display: block;
-  padding-left: clamp(2.5rem, 7vw, 10rem);
-}
 .hero__line2 {
   display: block;
   font-family: var(--serif);
-  font-size: clamp(4rem, 9vw, 11rem);
+  font-size: clamp(4.5rem, 10vw, 13rem);
   font-weight: 300; font-style: italic;
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  color: var(--text);
+  line-height: 0.9; letter-spacing: -0.04em;
+  color: var(--gray-4);
+  padding-left: clamp(3rem, 8vw, 12rem);
   transform: translateY(110%);
-  transition: transform 1s var(--ease) 0.55s;
+  transition: transform 1.1s var(--ease) 0.55s;
 }
 .hero.loaded .hero__line2 { transform: none; }
 
-.hero__cities {
+.hero__bottom {
+  position: relative; z-index: 2;
+  padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.hero__meta {
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  opacity: 0; transition: opacity 0.8s ease 1s;
+}
+.hero.loaded .hero__meta { opacity: 1; }
+.hero__meta-item {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-3);
+}
+.hero__meta-sep { width: 1px; height: 16px; background: var(--gray-2); }
+
+.hero__scroll-wrap {
   display: flex; align-items: center; gap: 1rem;
-  margin-top: 2.5rem;
-  opacity: 0; transform: translateY(12px);
-  transition: opacity 0.8s ease 1s, transform 0.8s var(--ease) 1s;
+  opacity: 0; transition: opacity 0.8s ease 1.3s;
 }
-.hero.loaded .hero__cities { opacity: 1; transform: none; }
-.hero__city {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
+.hero.loaded .hero__scroll-wrap { opacity: 1; }
+.hero__scroll-label {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-3);
 }
-.hero__dot {
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
+.hero__scroll-line {
+  width: 50px; height: 1px; background: var(--gray-2);
+  position: relative; overflow: hidden;
 }
-
-.hero__image-wrap {
-  position: relative; z-index: 1;
-  width: 100%; height: 62vh; min-height: 300px;
-  overflow: hidden; margin-top: 5vw;
-  opacity: 0; transform: scale(1.04);
-  transition: opacity 1.2s ease 0.6s, transform 1.4s var(--ease) 0.6s;
-}
-.hero.loaded .hero__image-wrap { opacity: 1; transform: scale(1); }
-
-.hero__image {
-  width: 100%; height: 120%;
-  object-fit: cover;
-  background: linear-gradient(135deg, #D8D3CA 0%, #BEB8AF 40%, #A09990 100%);
-}
-.hero__image-wrap::before {
+.hero__scroll-line::after {
   content: '';
   position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(196,168,130,.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(196,168,130,.1) 1px, transparent 1px),
-    linear-gradient(rgba(196,168,130,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(196,168,130,.05) 1px, transparent 1px);
-  background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
-  z-index: 2; pointer-events: none;
+  background: var(--gray-4);
+  animation: slide-line 1.8s ease-in-out infinite 1.4s;
 }
-.hero__image-wrap::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 40%;
-  background: linear-gradient(to bottom, transparent, rgba(245,242,237,.6));
-  z-index: 3; pointer-events: none;
+@keyframes slide-line {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* Imagen hero */
+.hero__image-wrap {
+  position: relative;
+  width: 100%; height: 55vh; min-height: 260px;
+  overflow: hidden;
+  opacity: 0; transform: scaleY(0.95);
+  transform-origin: bottom;
+  transition: opacity 1.2s ease 0.5s, transform 1.4s var(--ease) 0.5s;
+}
+.hero.loaded .hero__image-wrap { opacity: 1; transform: none; }
+
+.hero__image {
+  width: 100%; height: 120%; object-fit: cover;
+  background: linear-gradient(170deg, var(--gray-2) 0%, var(--gray-1) 100%);
+  filter: grayscale(30%);
 }
 .hero__image-placeholder {
   width: 100%; height: 100%;
-  background: linear-gradient(160deg, #D4CFC7 0%, #B5AFA6 50%, #8A8678 100%);
+  background: var(--gray-1);
   display: flex; align-items: center; justify-content: center;
 }
 .hero__image-placeholder span {
-  font-family: var(--mono); font-size: 0.65rem;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-}
-
-.hero__scroll {
-  position: absolute;
-  bottom: 2.5rem; right: clamp(1.5rem, 4vw, 3rem);
-  z-index: 5;
-  display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
-  opacity: 0; transition: opacity 1s ease 1.6s;
-}
-.hero.loaded .hero__scroll { opacity: 1; }
-.hero__scroll-text {
   font-family: var(--mono); font-size: 0.58rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--muted); writing-mode: vertical-rl; transform: rotate(180deg);
-}
-.hero__scroll-line {
-  width: 1px; height: 60px; background: var(--accent);
-  transform-origin: top;
-  animation: pulse-line 2s ease-in-out infinite 1.8s;
-}
-@keyframes pulse-line {
-  0%,100% { transform: scaleY(1); opacity: 1; }
-  50%      { transform: scaleY(0.3); opacity: 0.4; }
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray-2);
 }
 
 
 /* ══════════════════════════════════════════════════
-   SERVICIOS (franja rápida)
+   FRANJA SERVICIOS
 ══════════════════════════════════════════════════ */
-.services-strip {
-  background: var(--white);
-  border-top: 1px solid rgba(196,168,130,0.25);
-  border-bottom: 1px solid rgba(196,168,130,0.25);
-  padding: 2rem clamp(1.5rem, 5vw, 4rem);
-  display: flex;
-  gap: clamp(1.5rem, 3vw, 3rem);
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+.strip {
+  background: var(--gray-1);
+  padding: 1.4rem clamp(1.5rem, 5vw, 4rem);
+  display: flex; gap: 0; overflow: hidden;
+  border-top: 1px solid var(--gray-2);
+  border-bottom: 1px solid var(--gray-2);
 }
-.service-tag {
-  display: flex; align-items: center; gap: 0.6rem;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
+.strip__inner {
+  display: flex; gap: 3rem;
+  animation: marquee 28s linear infinite;
+  white-space: nowrap;
 }
-.service-tag::before {
-  content: '';
-  width: 5px; height: 1px;
-  background: var(--accent);
+.strip__inner:hover { animation-play-state: paused; }
+.strip__item {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-3);
+  display: flex; align-items: center; gap: 1rem;
   flex-shrink: 0;
 }
+.strip__item::before { content: '—'; color: var(--gray-2); }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
 
 /* ══════════════════════════════════════════════════
-   MANIFESTO
+   MANIFESTO — fondo gris oscuro
 ══════════════════════════════════════════════════ */
 .manifesto {
-  background: var(--deep);
+  background: var(--gray-1);
   padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem);
   position: relative; overflow: hidden;
 }
-.manifesto::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-  opacity: 0.04; pointer-events: none;
+.manifesto__number {
+  position: absolute; right: 0; bottom: -0.1em;
+  font-family: var(--serif); font-size: clamp(10rem, 30vw, 28rem);
+  font-weight: 300; line-height: 1;
+  color: rgba(255,255,255,0.02);
+  letter-spacing: -0.06em; user-select: none; pointer-events: none;
 }
-
-.manifesto__inner {
-  position: relative; max-width: 1400px;
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 4rem; align-items: start;
+.manifesto__label {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gray-3); margin-bottom: 2.5rem;
+  display: flex; align-items: center; gap: 1rem;
 }
-
+.manifesto__label::before { content: ''; width: 20px; height: 1px; background: var(--gray-3); }
 .manifesto__quote {
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3.8vw, 4.2rem);
-  font-weight: 300; font-style: italic;
-  line-height: 1.18; color: var(--bg);
-  letter-spacing: -0.01em;
-  max-width: 880px;
+  font-size: clamp(2rem, 4.2vw, 4.8rem);
+  font-weight: 300; line-height: 1.15;
+  letter-spacing: -0.02em; color: var(--white);
+  max-width: 950px;
 }
-.manifesto__quote em { font-style: normal; color: var(--accent); }
-
-.manifesto__aside {
-  writing-mode: vertical-rl; transform: rotate(180deg);
-  font-family: var(--mono); font-size: 0.6rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(245,242,237,0.15); white-space: nowrap;
-  padding-top: 0.5rem;
-}
+.manifesto__quote em { font-style: italic; color: var(--gray-4); }
 
 .manifesto__stats {
-  display: flex; gap: clamp(2rem, 5vw, 5rem);
-  margin-top: clamp(3rem, 6vw, 5rem);
+  display: flex; gap: clamp(3rem, 6vw, 6rem);
+  margin-top: clamp(4rem, 7vw, 6rem);
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(196,168,130,0.2);
+  border-top: 1px solid var(--gray-2);
   flex-wrap: wrap;
 }
-.manifesto__stat-number {
+.stat__n {
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-size: clamp(3rem, 5.5vw, 6rem);
   font-weight: 300; line-height: 1;
-  color: var(--accent); letter-spacing: -0.03em;
+  color: var(--white); letter-spacing: -0.04em;
 }
-.manifesto__stat-label {
-  font-family: var(--mono); font-size: 0.6rem;
+.stat__l {
+  font-family: var(--mono); font-size: 0.58rem;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(245,242,237,0.35); margin-top: 0.5rem;
+  color: var(--gray-3); margin-top: 0.6rem;
 }
 
 
@@ -439,171 +334,219 @@ a { text-decoration: none; color: inherit; }
    PROYECTOS
 ══════════════════════════════════════════════════ */
 .projects {
+  background: var(--white);
   padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
-  background: var(--bg);
 }
-
-.projects__header {
+.section-header {
   display: flex; align-items: baseline;
   justify-content: space-between;
   margin-bottom: clamp(3rem, 5vw, 4.5rem);
   flex-wrap: wrap; gap: 1rem;
+  border-bottom: 1px solid var(--gray-6);
+  padding-bottom: 1.5rem;
 }
-.projects__title {
+.section-title {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 400; letter-spacing: -0.02em; color: var(--text);
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  font-weight: 400; letter-spacing: -0.03em; color: var(--black);
 }
-.projects__link {
-  font-family: var(--mono); font-size: 0.65rem;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);
-  display: flex; align-items: center; gap: 0.5rem;
+.section-link {
+  font-family: var(--mono); font-size: 0.62rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-4);
+  display: flex; align-items: center; gap: 0.6rem;
   transition: color 0.3s ease;
 }
-.projects__link::after { content: '→'; transition: transform 0.3s ease; }
-.projects__link:hover { color: var(--text); }
-.projects__link:hover::after { transform: translateX(4px); }
+.section-link::after { content: '→'; transition: transform 0.3s ease; }
+.section-link:hover { color: var(--black); }
+.section-link:hover::after { transform: translateX(5px); }
 
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 1.5rem;
+  gap: 1rem;
 }
-
-.project-card {
-  position: relative; overflow: hidden;
-  cursor: pointer;
+.pcard {
+  position: relative; overflow: hidden; cursor: pointer;
+  background: var(--gray-6);
 }
-.project-card:nth-child(1) { grid-column: 1 / 8; grid-row: 1; aspect-ratio: 4/3; }
-.project-card:nth-child(2) { grid-column: 8 / 13; grid-row: 1; aspect-ratio: 1/1; }
-.project-card:nth-child(3) { grid-column: 8 / 13; grid-row: 2; aspect-ratio: 16/9; }
-.project-card:nth-child(4) { grid-column: 1 / 5; grid-row: 3; aspect-ratio: 3/4; }
-.project-card:nth-child(5) { grid-column: 5 / 9; grid-row: 3; aspect-ratio: 3/4; }
-.project-card:nth-child(6) { grid-column: 9 / 13; grid-row: 3; aspect-ratio: 3/4; }
+.pcard:nth-child(1) { grid-column: 1/8; grid-row: 1; aspect-ratio: 4/3; }
+.pcard:nth-child(2) { grid-column: 8/13; grid-row: 1; aspect-ratio: 1/1; }
+.pcard:nth-child(3) { grid-column: 8/13; grid-row: 2; aspect-ratio: 16/9; }
+.pcard:nth-child(4) { grid-column: 1/5; grid-row: 3; aspect-ratio: 3/4; }
+.pcard:nth-child(5) { grid-column: 5/9; grid-row: 3; aspect-ratio: 3/4; }
+.pcard:nth-child(6) { grid-column: 9/13; grid-row: 3; aspect-ratio: 3/4; }
 
-.project-card__bg {
+.pcard__bg {
   width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.8s var(--ease);
+  transition: transform 0.9s var(--ease);
+  filter: grayscale(20%);
 }
-.project-card:hover .project-card__bg { transform: scale(1.05); }
+.pcard:hover .pcard__bg { transform: scale(1.06); filter: grayscale(0%); }
 
-.project-card:nth-child(1) .project-card__bg { background: linear-gradient(135deg, #C8C2BA 0%, #9E9890 100%); }
-.project-card:nth-child(2) .project-card__bg { background: linear-gradient(135deg, #B8B4AC 0%, #8A8680 100%); }
-.project-card:nth-child(3) .project-card__bg { background: linear-gradient(135deg, #CEC8BF 0%, #A09890 100%); }
-.project-card:nth-child(4) .project-card__bg { background: linear-gradient(135deg, #D2CBC2 0%, #ACA49C 100%); }
-.project-card:nth-child(5) .project-card__bg { background: linear-gradient(135deg, #BEB8B0 0%, #9A9490 100%); }
-.project-card:nth-child(6) .project-card__bg { background: linear-gradient(135deg, #C6C0B8 0%, #A09890 100%); }
+.pcard:nth-child(1) .pcard__bg { background: linear-gradient(145deg,#3a3a3a,#1c1c1c); }
+.pcard:nth-child(2) .pcard__bg { background: linear-gradient(145deg,#2e2e2e,#1a1a1a); }
+.pcard:nth-child(3) .pcard__bg { background: linear-gradient(145deg,#404040,#282828); }
+.pcard:nth-child(4) .pcard__bg { background: linear-gradient(145deg,#363636,#202020); }
+.pcard:nth-child(5) .pcard__bg { background: linear-gradient(145deg,#2a2a2a,#181818); }
+.pcard:nth-child(6) .pcard__bg { background: linear-gradient(145deg,#3c3c3c,#222222); }
+.pcard__placeholder { width: 100%; height: 100%; min-height: 180px; }
 
-.project-card__placeholder { width: 100%; height: 100%; min-height: 200px; }
+.pcard__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.4rem;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.pcard:hover .pcard__overlay { opacity: 1; }
 
-.project-card__overlay {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 1.5rem;
-  background: linear-gradient(to top, rgba(26,26,24,.88) 0%, transparent 100%);
-  transform: translateY(calc(100% - 3.5rem));
-  transition: transform 0.5s var(--ease);
-}
-.project-card:hover .project-card__overlay { transform: none; }
+.pcard__num { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.15em; color: var(--gray-4); margin-bottom: 0.4rem; }
+.pcard__title { font-family: var(--serif); font-size: clamp(1rem,1.8vw,1.6rem); font-weight: 400; color: var(--white); line-height: 1.1; }
+.pcard__meta { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-5); margin-top: 0.3rem; }
 
-.project-card__num {
-  font-family: var(--mono); font-size: 0.6rem;
-  letter-spacing: 0.15em; color: rgba(255,255,255,0.45); margin-bottom: 0.5rem;
+/* Número siempre visible en esquina */
+.pcard__num-static {
+  position: absolute; top: 1rem; left: 1rem;
+  font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.25); z-index: 2;
 }
-.project-card__title {
-  font-family: var(--serif); font-size: clamp(1.1rem, 2vw, 1.7rem);
-  font-weight: 400; color: var(--bg); line-height: 1.1; margin-bottom: 0.4rem;
-}
-.project-card__meta {
-  font-family: var(--mono); font-size: 0.6rem;
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
-  opacity: 0; transition: opacity 0.4s ease 0.1s;
-}
-.project-card:hover .project-card__meta { opacity: 1; }
 
 
 /* ══════════════════════════════════════════════════
-   RESEÑAS / TESTIMONIOS
+   EL ESTUDIO
+══════════════════════════════════════════════════ */
+.studio {
+  background: var(--black);
+  padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem);
+  position: relative; overflow: hidden;
+}
+.studio::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px; pointer-events: none;
+}
+
+.studio__inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+
+.studio__label {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray-3);
+  margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;
+}
+.studio__label::before { content: ''; width: 20px; height: 1px; background: var(--gray-3); }
+
+.studio__title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-weight: 300; line-height: 1; letter-spacing: -0.04em;
+  color: var(--white); margin-bottom: 2.5rem;
+}
+.studio__title em { font-style: italic; color: var(--gray-4); display: block; }
+
+.studio__text {
+  font-family: var(--sans); font-size: 1rem;
+  font-weight: 300; line-height: 1.8; color: var(--gray-4);
+  margin-bottom: 1.5rem;
+}
+.studio__text strong { color: var(--white); font-weight: 400; }
+
+.studio__sign {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-2);
+}
+.studio__sign-name {
+  font-family: var(--serif); font-size: 1.4rem;
+  font-weight: 400; font-style: italic; color: var(--white); margin-bottom: 0.3rem;
+}
+.studio__sign-role {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-3);
+}
+
+/* Lado derecho del estudio */
+.studio__right { padding-top: 2rem; }
+
+.studio__photo-wrap {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--gray-1); overflow: hidden;
+  position: relative; margin-bottom: 2rem;
+}
+.studio__photo-wrap::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.studio__photo-label {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-3);
+  text-align: center; padding: 0.8rem;
+}
+
+.studio__values {
+  display: flex; flex-direction: column; gap: 0;
+}
+.studio__value {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--gray-2);
+}
+.studio__value:last-child { border: none; }
+.studio__value-n {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.1em; color: var(--gray-2); flex-shrink: 0;
+}
+.studio__value-text {
+  font-family: var(--sans); font-size: 0.85rem;
+  font-weight: 300; color: var(--gray-4); line-height: 1.5;
+}
+.studio__value-text strong { color: var(--white); font-weight: 400; }
+
+
+/* ══════════════════════════════════════════════════
+   TESTIMONIOS
 ══════════════════════════════════════════════════ */
 .testimonials {
   background: var(--white);
   padding: clamp(5rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
-  position: relative; overflow: hidden;
 }
-
-.testimonials__header {
-  display: flex; align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: clamp(3rem, 5vw, 4rem);
-  flex-wrap: wrap; gap: 1rem;
-}
-.testimonials__title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 400; letter-spacing: -0.02em; color: var(--text);
-}
-.testimonials__rating {
-  display: flex; align-items: center; gap: 0.8rem;
-}
-.testimonials__stars {
-  display: flex; gap: 2px;
-}
-.testimonials__star {
-  width: 12px; height: 12px;
-  background: var(--accent);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-.testimonials__score {
-  font-family: var(--mono); font-size: 0.65rem;
-  letter-spacing: 0.12em; color: var(--muted);
-}
-
 .testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--gray-6);
+  border: 1px solid var(--gray-6);
+  margin-top: clamp(3rem,5vw,4rem);
 }
-
-.testimonial-card {
-  background: var(--bg);
-  padding: 2rem;
-  border: 1px solid rgba(196,168,130,0.2);
+.tcard {
+  background: var(--white); padding: 2.5rem 2rem;
   position: relative;
-  transition: border-color 0.3s ease, transform 0.3s var(--ease);
+  transition: background 0.3s ease;
 }
-.testimonial-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
+.tcard:hover { background: var(--gray-6); }
+.tcard__stars {
+  display: flex; gap: 3px; margin-bottom: 1.5rem;
 }
-.testimonial-card::before {
-  content: '"';
-  font-family: var(--serif);
-  font-size: 5rem;
-  line-height: 1;
-  color: var(--accent);
-  opacity: 0.3;
-  position: absolute;
-  top: 0.5rem; left: 1.5rem;
+.tcard__star {
+  width: 8px; height: 8px; background: var(--black);
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
 }
-
-.testimonial-card__stars {
-  display: flex; gap: 2px; margin-bottom: 1rem;
+.tcard__text {
+  font-family: var(--sans); font-size: 0.9rem;
+  font-weight: 300; line-height: 1.75; color: var(--gray-3);
+  margin-bottom: 2rem;
 }
-.testimonial-card__star {
-  width: 10px; height: 10px;
-  background: var(--accent);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-
-.testimonial-card__text {
-  font-family: var(--sans);
-  font-size: 0.9rem; font-weight: 300;
-  line-height: 1.7; color: var(--text);
-  margin-bottom: 1.5rem;
-}
-.testimonial-card__author {
-  font-family: var(--mono); font-size: 0.6rem;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted);
+.tcard__author {
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-4);
 }
 
 
@@ -611,45 +554,74 @@ a { text-decoration: none; color: inherit; }
    PROCESO
 ══════════════════════════════════════════════════ */
 .process {
-  background: var(--bg);
+  background: var(--gray-6);
   padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
 }
-
-.process__title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 400; letter-spacing: -0.02em;
-  margin-bottom: clamp(3rem, 5vw, 4rem); color: var(--text);
-}
-
-.process__list { border-top: 1px solid rgba(26,26,24,0.1); }
-
+.process__list { margin-top: clamp(3rem, 5vw, 4rem); }
 .process__item {
-  display: grid;
-  grid-template-columns: 5rem 1fr 1fr;
-  gap: 2rem; padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(26,26,24,0.1);
-  align-items: center;
+  display: grid; grid-template-columns: 4rem 1fr 1.2fr;
+  gap: 2.5rem; padding: 2.2rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  align-items: start;
   transition: background 0.3s ease, padding 0.3s ease, margin 0.3s ease;
   cursor: default;
 }
-.process__item:hover { background: rgba(196,168,130,0.06); margin: 0 -2rem; padding: 2.5rem 2rem; }
-
-.process__num {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 300; font-style: italic;
-  color: var(--accent); line-height: 1;
+.process__item:first-child { border-top: 1px solid rgba(0,0,0,0.1); }
+.process__item:hover { background: rgba(0,0,0,0.04); margin: 0 -2rem; padding: 2.2rem 2rem; }
+.process__n {
+  font-family: var(--serif); font-size: clamp(2rem,4vw,3.5rem);
+  font-weight: 300; font-style: italic; color: var(--black); line-height: 1;
 }
 .process__name {
-  font-family: var(--serif);
-  font-size: clamp(1.3rem, 2.5vw, 2rem);
-  font-weight: 400; color: var(--text);
+  font-family: var(--serif); font-size: clamp(1.3rem,2.5vw,2rem);
+  font-weight: 400; color: var(--black); padding-top: 0.4rem;
 }
 .process__desc {
-  font-family: var(--sans);
-  font-size: 0.88rem; font-weight: 300;
-  line-height: 1.65; color: var(--muted);
+  font-family: var(--sans); font-size: 0.88rem;
+  font-weight: 300; line-height: 1.7; color: var(--gray-3); padding-top: 0.5rem;
+}
+
+
+/* ══════════════════════════════════════════════════
+   FAQ — OPTIMIZADO PARA LLM
+══════════════════════════════════════════════════ */
+.faq {
+  background: var(--white);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
+}
+.faq__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 6rem; margin-top: clamp(3rem, 5vw, 4rem);
+}
+.faq__item {
+  border-bottom: 1px solid var(--gray-6);
+  padding: 0;
+}
+.faq__question {
+  width: 100%; text-align: left; background: none; border: none;
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1.5rem; padding: 1.8rem 0; cursor: pointer;
+  font-family: var(--sans); font-size: 0.95rem;
+  font-weight: 400; color: var(--black);
+  transition: color 0.3s ease;
+}
+.faq__question:hover { color: var(--gray-3); }
+.faq__question-text { text-align: left; line-height: 1.4; }
+.faq__icon {
+  font-family: var(--mono); font-size: 1.2rem; font-weight: 300;
+  color: var(--gray-4); flex-shrink: 0;
+  transition: transform 0.4s var(--ease), color 0.3s ease;
+  line-height: 1;
+}
+.faq__item.open .faq__icon { transform: rotate(45deg); color: var(--black); }
+.faq__answer {
+  font-family: var(--sans); font-size: 0.88rem;
+  font-weight: 300; line-height: 1.8; color: var(--gray-3);
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.5s var(--ease), padding 0.4s ease;
+}
+.faq__item.open .faq__answer {
+  max-height: 400px; padding-bottom: 1.8rem;
 }
 
 
@@ -657,65 +629,63 @@ a { text-decoration: none; color: inherit; }
    CTA
 ══════════════════════════════════════════════════ */
 .cta {
-  background: var(--deep);
+  background: var(--black);
   padding: clamp(6rem, 14vw, 12rem) clamp(1.5rem, 5vw, 4rem);
   text-align: center; position: relative; overflow: hidden;
 }
 .cta::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(196,168,130,0.06) 1px, transparent 1px);
-  background-size: 28px 28px; pointer-events: none;
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px; pointer-events: none;
 }
-
-.cta__eyebrow {
-  font-family: var(--mono); font-size: 0.65rem;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 2rem;
+.cta__label {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gray-3); margin-bottom: 2.5rem;
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+}
+.cta__label::before, .cta__label::after {
+  content: ''; width: 30px; height: 1px; background: var(--gray-3);
 }
 .cta__title {
   font-family: var(--serif);
-  font-size: clamp(2.5rem, 6vw, 7rem);
-  font-weight: 300; line-height: 1.05;
-  letter-spacing: -0.03em; color: var(--bg);
-  margin-bottom: 3rem; position: relative;
+  font-size: clamp(3rem, 7vw, 9rem);
+  font-weight: 300; line-height: 0.95; letter-spacing: -0.04em;
+  color: var(--white); margin-bottom: 3.5rem;
 }
-.cta__title em {
-  font-style: italic; color: var(--accent);
-}
+.cta__title em { font-style: italic; color: var(--gray-4); }
 
-.cta__actions {
-  display: flex; align-items: center;
-  justify-content: center; gap: 1.5rem;
-  flex-wrap: wrap;
-}
+.cta__actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 
-.cta__btn {
-  display: inline-block;
-  font-family: var(--sans); font-size: 0.73rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--bg); border: 1px solid rgba(245,242,237,0.4);
-  padding: 1.1rem 2.8rem; position: relative; overflow: hidden;
-  transition: color 0.4s ease, border-color 0.4s ease;
+.cta__btn-primary {
+  display: inline-block; font-family: var(--sans);
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--black); background: var(--white);
+  padding: 1.15rem 3rem; position: relative; overflow: hidden;
+  transition: color 0.4s ease;
 }
-.cta__btn::before {
+.cta__btn-primary::before {
   content: ''; position: absolute; inset: 0;
-  background: var(--accent); transform: translateY(101%);
+  background: var(--gray-4); transform: translateX(-101%);
   transition: transform 0.4s var(--ease);
 }
-.cta__btn:hover { color: var(--deep); border-color: var(--accent); }
-.cta__btn:hover::before { transform: none; }
-.cta__btn span { position: relative; z-index: 1; }
+.cta__btn-primary:hover::before { transform: none; }
+.cta__btn-primary span { position: relative; z-index: 1; }
 
-.cta__tel {
-  font-family: var(--mono); font-size: 0.78rem;
-  letter-spacing: 0.1em; color: rgba(245,242,237,0.5);
-  transition: color 0.3s ease;
+.cta__btn-secondary {
+  font-family: var(--mono); font-size: 0.7rem;
+  letter-spacing: 0.12em; color: var(--gray-3);
+  border: 1px solid var(--gray-2); padding: 1.1rem 2rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
-.cta__tel:hover { color: var(--accent); }
+.cta__btn-secondary:hover { color: var(--white); border-color: var(--gray-4); }
 
 .cta__coords {
-  font-family: var(--mono); font-size: 0.6rem;
-  letter-spacing: 0.15em; color: rgba(245,242,237,0.2); margin-top: 3rem;
+  font-family: var(--mono); font-size: 0.58rem;
+  letter-spacing: 0.14em; color: var(--gray-2); margin-top: 4rem;
 }
 
 
@@ -723,49 +693,46 @@ a { text-decoration: none; color: inherit; }
    FOOTER
 ══════════════════════════════════════════════════ */
 .footer {
-  background: #1A1A18;
-  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem) 2rem;
+  background: var(--gray-1);
+  padding: clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,4rem) 2rem;
+  border-top: 1px solid var(--gray-2);
 }
 .footer__top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: 3rem; padding-bottom: 3rem;
-  border-bottom: 1px solid rgba(245,242,237,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.footer__brand-name {
-  font-family: var(--serif); font-size: 1.3rem;
-  font-weight: 400; color: var(--bg); margin-bottom: 0.4rem;
+.footer__name {
+  font-family: var(--serif); font-size: 1.2rem;
+  font-weight: 400; color: var(--white); margin-bottom: 0.3rem;
 }
-.footer__brand-sub {
-  font-family: var(--mono); font-size: 0.58rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 1rem;
+.footer__role {
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gray-3); margin-bottom: 1.2rem;
 }
-.footer__brand-tag {
-  font-family: var(--sans); font-size: 0.78rem;
-  font-weight: 300; color: rgba(245,242,237,0.3);
-  line-height: 1.65; max-width: 240px;
+.footer__desc {
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 300;
+  color: var(--gray-3); line-height: 1.7; max-width: 240px;
 }
 .footer__col-title {
-  font-family: var(--mono); font-size: 0.58rem;
+  font-family: var(--mono); font-size: 0.55rem;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(245,242,237,0.25); margin-bottom: 1.5rem;
+  color: var(--gray-2); margin-bottom: 1.5rem;
 }
-.footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer__links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
 .footer__links a {
-  font-family: var(--sans); font-size: 0.8rem;
-  font-weight: 300; color: rgba(245,242,237,0.5);
-  transition: color 0.3s ease;
+  font-family: var(--sans); font-size: 0.78rem; font-weight: 300;
+  color: var(--gray-3); transition: color 0.3s ease;
 }
-.footer__links a:hover { color: var(--accent); }
+.footer__links a:hover { color: var(--white); }
 .footer__bottom {
-  display: flex; justify-content: space-between;
-  align-items: center; padding-top: 2rem;
-  flex-wrap: wrap; gap: 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 2rem; flex-wrap: wrap; gap: 1rem;
 }
 .footer__copy {
-  font-family: var(--mono); font-size: 0.58rem;
-  letter-spacing: 0.1em; color: rgba(245,242,237,0.18);
+  font-family: var(--mono); font-size: 0.55rem;
+  letter-spacing: 0.1em; color: var(--gray-2);
 }
 
 
@@ -773,72 +740,69 @@ a { text-decoration: none; color: inherit; }
    CURSOR
 ══════════════════════════════════════════════════ */
 .cursor-dot {
-  position: fixed; width: 6px; height: 6px;
-  background: var(--accent); border-radius: 50%;
+  position: fixed; width: 5px; height: 5px;
+  background: var(--white); border-radius: 50%;
   pointer-events: none; z-index: 10000;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%); mix-blend-mode: difference;
 }
 .cursor-ring {
-  position: fixed; width: 40px; height: 40px;
-  border: 1px solid rgba(196,168,130,0.5); border-radius: 50%;
+  position: fixed; width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.25); border-radius: 50%;
   pointer-events: none; z-index: 9998;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   transition: width 0.4s var(--ease), height 0.4s var(--ease), border-color 0.3s ease;
+  mix-blend-mode: difference;
 }
-.cursor-ring.expanded { width: 80px; height: 80px; border-color: var(--accent); }
-@media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+.cursor-ring.big { width: 72px; height: 72px; border-color: rgba(255,255,255,0.5); }
+@media (hover:none) { .cursor-dot,.cursor-ring { display:none; } }
 
 
 /* ══════════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+  .studio__inner { grid-template-columns: 1fr; }
+  .studio__right { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .testimonials__grid { grid-template-columns: 1fr 1fr; }
+  .faq__grid { grid-template-columns: 1fr; gap: 0; }
 }
 @media (max-width: 900px) {
   .projects__grid { grid-template-columns: 1fr 1fr; }
-  .project-card:nth-child(1) { grid-column: 1 / 3; }
-  .project-card:nth-child(2) { grid-column: 1 / 2; grid-row: 2; }
-  .project-card:nth-child(3) { grid-column: 2 / 3; grid-row: 2; }
-  .project-card:nth-child(4) { grid-column: 1 / 2; grid-row: 3; }
-  .project-card:nth-child(5) { grid-column: 2 / 3; grid-row: 3; }
-  .project-card:nth-child(6) { grid-column: 1 / 3; grid-row: 4; }
+  .pcard:nth-child(1) { grid-column: 1/3; }
+  .pcard:nth-child(2) { grid-column: 1/2; grid-row: 2; }
+  .pcard:nth-child(3) { grid-column: 2/3; grid-row: 2; }
+  .pcard:nth-child(4) { grid-column: 1/2; grid-row: 3; }
+  .pcard:nth-child(5) { grid-column: 2/3; grid-row: 3; }
+  .pcard:nth-child(6) { grid-column: 1/3; grid-row: 4; }
   .process__item { grid-template-columns: 3rem 1fr; }
   .process__desc { display: none; }
   .footer__top { grid-template-columns: 1fr 1fr; }
-  .manifesto__inner { grid-template-columns: 1fr; }
-  .manifesto__aside { display: none; }
 }
 @media (max-width: 600px) {
   .nav__links { display: none; }
   .projects__grid { grid-template-columns: 1fr; }
-  .project-card:nth-child(n) { grid-column: 1; grid-row: auto; }
+  .pcard:nth-child(n) { grid-column:1; grid-row: auto; }
   .testimonials__grid { grid-template-columns: 1fr; }
+  .studio__right { grid-template-columns: 1fr; }
   .footer__top { grid-template-columns: 1fr; }
-  .hero__scroll { display: none; }
-  .services-strip { gap: 1rem; }
+  .hero__scroll-wrap { display: none; }
 }
 </style>
 </head>
-
 <body>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="dot"></div>
+<div class="cursor-ring" id="ring"></div>
 
 
-<!-- ══ NAVEGACIÓN ══════════════════════════════════ -->
-<nav class="nav" id="nav">
-  <a href="#" class="nav__logo">
-    <span class="nav__logo-primary">Gabriel Cantarellas</span>
-    <span class="nav__logo-sep">/</span>
-    <span class="nav__logo-location">Arquitecte · Mallorca</span>
-  </a>
+<!-- ══ NAV ═════════════════════════════════════════ -->
+<nav class="nav dark" id="nav">
+  <a href="#" class="nav__logo">Gabriel Cantarellas Reig</a>
   <ul class="nav__links">
     <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#estudio">Estudio</a></li>
     <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#contacto">Estudio</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="tel:622149939" class="nav__cta">622 14 99 39</a>
 </nav>
@@ -847,289 +811,399 @@ a { text-decoration: none; color: inherit; }
 <!-- ══ HERO ════════════════════════════════════════ -->
 <section class="hero" id="hero">
 
-  <div class="hero__year" aria-hidden="true">GCR</div>
-
   <div class="hero__content">
-    <p class="hero__label">Arquitecto en Mallorca · Pollensa · Norte</p>
-
-    <h1 class="hero__title">
-      <span class="hero__clip">
-        <span class="hero__line1">Arquitectura</span>
-      </span>
-      <span class="hero__line2-wrap">
-        <span class="hero__line2">que perdura</span>
-      </span>
+    <p class="hero__tag">Arquitecto en Mallorca · Pollensa · Norte</p>
+    <h1>
+      <span class="hero__clip"><span class="hero__line1">Arquitectura</span></span>
+      <span class="hero__clip"><span class="hero__line2">que perdura</span></span>
     </h1>
+  </div>
 
-    <div class="hero__cities">
-      <span class="hero__city">Pollensa</span>
-      <span class="hero__dot"></span>
-      <span class="hero__city">Mallorca</span>
-      <span class="hero__dot"></span>
-      <span class="hero__city">Internacional</span>
+  <div class="hero__bottom">
+    <div class="hero__meta">
+      <span class="hero__meta-item">Pollensa</span>
+      <span class="hero__meta-sep"></span>
+      <span class="hero__meta-item">Mallorca</span>
+      <span class="hero__meta-sep"></span>
+      <span class="hero__meta-item">Internacional</span>
+      <span class="hero__meta-sep"></span>
+      <span class="hero__meta-item">oficina@gabrielarquitectura.com</span>
+    </div>
+    <div class="hero__scroll-wrap">
+      <span class="hero__scroll-label">Scroll</span>
+      <div class="hero__scroll-line"></div>
     </div>
   </div>
 
   <div class="hero__image-wrap">
     <div class="hero__image hero__image-placeholder">
-      <span>— fotografía de proyecto —</span>
+      <span>— fotografía del proyecto —</span>
     </div>
-  </div>
-
-  <div class="hero__scroll" aria-hidden="true">
-    <span class="hero__scroll-text">Scroll</span>
-    <div class="hero__scroll-line"></div>
   </div>
 
 </section>
 
 
-<!-- ══ FRANJA DE SERVICIOS ════════════════════════ -->
-<div class="services-strip" id="servicios">
-  <span class="service-tag">Proyectos de vivienda</span>
-  <span class="service-tag">Reformas sostenibles</span>
-  <span class="service-tag">Diseño de interiores</span>
-  <span class="service-tag">Rehabilitación de patrimonio</span>
-  <span class="service-tag">Licencias urbanísticas</span>
-  <span class="service-tag">Certificados energéticos</span>
-  <span class="service-tag">Cédulas de habitabilidad</span>
+<!-- ══ MARQUEE ══════════════════════════════════════ -->
+<div class="strip">
+  <div class="strip__inner" id="strip">
+    <span class="strip__item">Proyectos de vivienda</span>
+    <span class="strip__item">Reformas sostenibles</span>
+    <span class="strip__item">Diseño de interiores</span>
+    <span class="strip__item">Rehabilitación de patrimonio</span>
+    <span class="strip__item">Licencias urbanísticas</span>
+    <span class="strip__item">Certificados energéticos</span>
+    <span class="strip__item">Cédulas de habitabilidad</span>
+    <span class="strip__item">Viviendas de lujo en Mallorca</span>
+    <span class="strip__item">Proyectos de vivienda</span>
+    <span class="strip__item">Reformas sostenibles</span>
+    <span class="strip__item">Diseño de interiores</span>
+    <span class="strip__item">Rehabilitación de patrimonio</span>
+    <span class="strip__item">Licencias urbanísticas</span>
+    <span class="strip__item">Certificados energéticos</span>
+    <span class="strip__item">Cédulas de habitabilidad</span>
+    <span class="strip__item">Viviendas de lujo en Mallorca</span>
+  </div>
 </div>
 
 
 <!-- ══ MANIFESTO ═══════════════════════════════════ -->
 <section class="manifesto">
-  <div class="manifesto__inner">
+  <div class="manifesto__number" aria-hidden="true">GCR</div>
+  <p class="manifesto__label reveal">Nuestra filosofía</p>
+  <blockquote class="manifesto__quote reveal" style="transition-delay:.15s">
+    "Cada proyecto es una <em>conversación</em>. Escuchamos antes de proponer, cuidamos cada detalle y acompañamos al cliente desde la primera reunión hasta la última visita de obra."
+  </blockquote>
+  <div class="manifesto__stats reveal" style="transition-delay:.3s">
     <div>
-      <blockquote class="manifesto__quote reveal">
-        "Cada proyecto es una <em>conversación</em>. Escuchamos antes de proponer, cuidamos cada detalle y acompañamos al cliente desde la primera reunión hasta la última visita de obra."
-      </blockquote>
-      <div class="manifesto__stats reveal" style="transition-delay:.2s">
-        <div class="manifesto__stat">
-          <div class="manifesto__stat-number" data-count="50">0</div>
-          <div class="manifesto__stat-label">Reseñas 5 estrellas</div>
-        </div>
-        <div class="manifesto__stat">
-          <div class="manifesto__stat-number" data-count="7">0</div>
-          <div class="manifesto__stat-label">Años de estudio</div>
-        </div>
-        <div class="manifesto__stat">
-          <div class="manifesto__stat-number" data-count="3">0</div>
-          <div class="manifesto__stat-label">Idiomas</div>
-        </div>
-      </div>
+      <div class="stat__n" data-count="50">0</div>
+      <div class="stat__l">Reseñas 5 estrellas</div>
     </div>
-    <div class="manifesto__aside">Gabriel Cantarellas Reig · Arquitecte · Pollensa, Mallorca</div>
+    <div>
+      <div class="stat__n" data-count="7">0</div>
+      <div class="stat__l">Años de estudio</div>
+    </div>
+    <div>
+      <div class="stat__n" data-count="3">0</div>
+      <div class="stat__l">Idiomas</div>
+    </div>
+    <div>
+      <div class="stat__n" data-count="100">0</div>
+      <div class="stat__l">% Clientes satisfechos</div>
+    </div>
   </div>
 </section>
 
 
-<!-- ══ PROYECTOS ═══════════════════════════════════ -->
+<!-- ══ PROYECTOS ════════════════════════════════════ -->
 <section class="projects" id="proyectos">
-  <div class="projects__header">
-    <h2 class="projects__title reveal">Proyectos seleccionados</h2>
-    <a href="#" class="projects__link reveal" style="transition-delay:.2s">Ver todos los proyectos</a>
+  <div class="section-header">
+    <h2 class="section-title reveal">Proyectos</h2>
+    <a href="#" class="section-link reveal" style="transition-delay:.2s">Ver todos</a>
   </div>
-
   <div class="projects__grid">
-
-    <article class="project-card reveal-left">
-      <div class="project-card__bg project-card__placeholder"></div>
-      <div class="project-card__overlay">
-        <div class="project-card__num">01</div>
-        <h3 class="project-card__title">Ca'n Beltran</h3>
-        <p class="project-card__meta">Vivienda unifamiliar · Pollensa · 2024 · 320m²</p>
+    <article class="project-card pcard reveal-l">
+      <div class="pcard__num-static">01</div>
+      <div class="pcard__bg pcard__placeholder"></div>
+      <div class="pcard__overlay">
+        <div class="pcard__num">01</div>
+        <h3 class="pcard__title">Ca'n Beltran</h3>
+        <p class="pcard__meta">Vivienda unifamiliar · Pollensa · 2024 · 320m²</p>
       </div>
     </article>
-
-    <article class="project-card reveal">
-      <div class="project-card__bg project-card__placeholder"></div>
-      <div class="project-card__overlay">
-        <div class="project-card__num">02</div>
-        <h3 class="project-card__title">Son Marroig</h3>
-        <p class="project-card__meta">Rehabilitación patrimonio · Deià · 2023</p>
+    <article class="project-card pcard reveal">
+      <div class="pcard__num-static">02</div>
+      <div class="pcard__bg pcard__placeholder"></div>
+      <div class="pcard__overlay">
+        <div class="pcard__num">02</div>
+        <h3 class="pcard__title">Son Marroig</h3>
+        <p class="pcard__meta">Rehabilitación patrimonio · Deià · 2023</p>
       </div>
     </article>
-
-    <article class="project-card reveal" style="transition-delay:.1s">
-      <div class="project-card__bg project-card__placeholder"></div>
-      <div class="project-card__overlay">
-        <div class="project-card__num">03</div>
-        <h3 class="project-card__title">Estudi Nord</h3>
-        <p class="project-card__meta">Interiorismo · Alcúdia · 2023 · 85m²</p>
+    <article class="project-card pcard reveal" style="transition-delay:.1s">
+      <div class="pcard__num-static">03</div>
+      <div class="pcard__bg pcard__placeholder"></div>
+      <div class="pcard__overlay">
+        <div class="pcard__num">03</div>
+        <h3 class="pcard__title">Estudi Nord</h3>
+        <p class="pcard__meta">Interiorismo · Alcúdia · 2023 · 85m²</p>
       </div>
     </article>
-
-    <article class="project-card reveal-left">
-      <div class="project-card__bg project-card__placeholder"></div>
-      <div class="project-card__overlay">
-        <div class="project-card__num">04</div>
-        <h3 class="project-card__title">Villa Tramuntana</h3>
-        <p class="project-card__meta">Vivienda de lujo · Formentor · 2022 · 480m²</p>
+    <article class="project-card pcard reveal-l">
+      <div class="pcard__num-static">04</div>
+      <div class="pcard__bg pcard__placeholder"></div>
+      <div class="pcard__overlay">
+        <div class="pcard__num">04</div>
+        <h3 class="pcard__title">Villa Tramuntana</h3>
+        <p class="pcard__meta">Vivienda de lujo · Formentor · 2022 · 480m²</p>
       </div>
     </article>
-
-    <article class="project-card reveal" style="transition-delay:.15s">
-      <div class="project-card__bg project-card__placeholder"></div>
-      <div class="project-card__overlay">
-        <div class="project-card__num">05</div>
-        <h3 class="project-card__title">Ca'n Torrent</h3>
-        <p class="project-card__meta">Reforma integral · Pollensa · 2022 · 210m²</p>
+    <article class="project-card pcard reveal" style="transition-delay:.15s">
+      <div class="pcard__num-static">05</div>
+      <div class="pcard__bg pcard__placeholder"></div>
+      <div class="pcard__overlay">
+        <div class="pcard__num">05</div>
+        <h3 class="pcard__title">Ca'n Torrent</h3>
+        <p class="pcard__meta">Reforma integral · Pollensa · 2022 · 210m²</p>
       </div>
     </article>
-
-    <article class="project-card reveal-right">
-      <div class="project-card__bg project-card__placeholder"></div>
-      <div class="project-card__overlay">
-        <div class="project-card__num">06</div>
-        <h3 class="project-card__title">Finca Mestral</h3>
-        <p class="project-card__meta">Rústico · Campanet · 2021 · 560m²</p>
+    <article class="project-card pcard reveal-r">
+      <div class="pcard__num-static">06</div>
+      <div class="pcard__bg pcard__placeholder"></div>
+      <div class="pcard__overlay">
+        <div class="pcard__num">06</div>
+        <h3 class="pcard__title">Finca Mestral</h3>
+        <p class="pcard__meta">Rústico · Campanet · 2021 · 560m²</p>
       </div>
     </article>
+  </div>
+</section>
+
+
+<!-- ══ EL ESTUDIO ══════════════════════════════════ -->
+<section class="studio" id="estudio">
+  <div class="studio__inner">
+
+    <div class="reveal-l">
+      <p class="studio__label">El estudio</p>
+      <h2 class="studio__title">
+        Rigor técnico.<br>
+        <em>Trato humano.</em>
+      </h2>
+      <p class="studio__text">
+        Gabriel Cantarellas Reig es arquitecto colegiado (COAIB) con estudio en <strong>Pollensa, norte de Mallorca</strong>. Desde 2018 trabaja con clientes locales e internacionales en proyectos de distinta escala: desde una <strong>cédula de habitabilidad</strong> hasta una <strong>vivienda de lujo en primera línea de mar</strong>.
+      </p>
+      <p class="studio__text">
+        Lo que distingue al estudio no es solo el resultado técnico — es la <strong>forma de trabajar</strong>. Cada cliente recibe el mismo nivel de atención, ya sea para un certificado energético o para la construcción de una finca rústica en suelo protegido. Se trabaja en catalán, castellano e inglés.
+      </p>
+      <p class="studio__text">
+        El estudio colabora con topógrafos, ingenieros y constructores de confianza, coordinando cada fase para que el cliente no tenga que preocuparse de nada más que de su proyecto.
+      </p>
+      <div class="studio__sign">
+        <div class="studio__sign-name">Gabriel Cantarellas Reig</div>
+        <div class="studio__sign-role">Arquitecte · Col. COAIB · Pollensa, Mallorca</div>
+      </div>
+    </div>
+
+    <div class="studio__right reveal-r" style="transition-delay:.2s">
+      <div class="studio__photo-wrap">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-2)">— fotografía del arquitecto —</span>
+        </div>
+      </div>
+      <div class="studio__values">
+        <div class="studio__value">
+          <span class="studio__value-n">01</span>
+          <span class="studio__value-text"><strong>Proximidad</strong> — Atención directa del arquitecto en todo momento, sin intermediarios.</span>
+        </div>
+        <div class="studio__value">
+          <span class="studio__value-n">02</span>
+          <span class="studio__value-text"><strong>Sostenibilidad</strong> — Proyectos con criterio ambiental, materiales locales y eficiencia energética.</span>
+        </div>
+        <div class="studio__value">
+          <span class="studio__value-n">03</span>
+          <span class="studio__value-text"><strong>Transparencia</strong> — El cliente sabe en todo momento el estado de su proyecto o expediente.</span>
+        </div>
+        <div class="studio__value">
+          <span class="studio__value-n">04</span>
+          <span class="studio__value-text"><strong>Detalle</strong> — Perfeccionismo en cada fase, desde el concepto hasta la dirección de obra.</span>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
 
 
-<!-- ══ TESTIMONIOS ═════════════════════════════════ -->
+<!-- ══ TESTIMONIOS ══════════════════════════════════ -->
 <section class="testimonials">
-  <div class="testimonials__header">
-    <h2 class="testimonials__title reveal">Lo que dicen los clientes</h2>
-    <div class="testimonials__rating reveal" style="transition-delay:.2s">
-      <div class="testimonials__stars">
-        <div class="testimonials__star"></div>
-        <div class="testimonials__star"></div>
-        <div class="testimonials__star"></div>
-        <div class="testimonials__star"></div>
-        <div class="testimonials__star"></div>
-      </div>
-      <span class="testimonials__score">5.0 · Google Reviews</span>
+  <div class="section-header">
+    <h2 class="section-title reveal">Clientes</h2>
+    <div class="reveal" style="transition-delay:.2s;font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;color:var(--gray-4)">
+      ★★★★★ &nbsp;5.0 · Google Reviews · +50 reseñas
     </div>
   </div>
-
   <div class="testimonials__grid">
-
-    <div class="testimonial-card reveal-left">
-      <div class="testimonial-card__stars">
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div>
-      </div>
-      <p class="testimonial-card__text">"Tras pasar por una cantidad ingente de arquitectos, por fin encontré una persona preocupada por sus clientes. Siempre informado y actualizado en cada momento, sin distinción del tipo de trabajo."</p>
-      <span class="testimonial-card__author">Toni Franco · Mallorca</span>
+    <div class="tcard reveal-l">
+      <div class="tcard__stars"><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div></div>
+      <p class="tcard__text">"Tras pasar por una cantidad ingente de arquitectos, por fin encontré una persona preocupada por sus clientes. Siempre informado y actualizado en cada momento, sin distinción del tipo de trabajo."</p>
+      <span class="tcard__author">Toni Franco · Mallorca</span>
     </div>
-
-    <div class="testimonial-card reveal" style="transition-delay:.1s">
-      <div class="testimonial-card__stars">
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div>
-      </div>
-      <p class="testimonial-card__text">"Gran professional amb molta passió per l'arquitectura i una gran atenció als detalls. Té molt bon criteri estètic i una visió molt clara dels projectes."</p>
-      <span class="testimonial-card__author">Jaume Albertí · Mallorca</span>
+    <div class="tcard reveal" style="transition-delay:.1s">
+      <div class="tcard__stars"><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div></div>
+      <p class="tcard__text">"Gran professional amb molta passió per l'arquitectura i una gran atenció als detalls. Té molt bon criteri estètic i una visió molt clara dels projectes."</p>
+      <span class="tcard__author">Jaume Albertí · Mallorca</span>
     </div>
-
-    <div class="testimonial-card reveal-right" style="transition-delay:.2s">
-      <div class="testimonial-card__stars">
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div>
-      </div>
-      <p class="testimonial-card__text">"High quality work delivered on time at a reasonable price. Used Gabriel's services on several occasions and every time he has delivered. Highly recommend."</p>
-      <span class="testimonial-card__author">Colin Murphy · International client</span>
+    <div class="tcard reveal-r" style="transition-delay:.2s">
+      <div class="tcard__stars"><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div></div>
+      <p class="tcard__text">"High quality work delivered on time at a reasonable price. Used Gabriel's services on several occasions and every time he has delivered. Highly recommend."</p>
+      <span class="tcard__author">Colin Murphy · International client</span>
     </div>
-
-    <div class="testimonial-card reveal-left" style="transition-delay:.05s">
-      <div class="testimonial-card__stars">
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div>
-      </div>
-      <p class="testimonial-card__text">"Muy satisfechos con los trabajos realizados. Excelente comunicación y muy buena relación calidad-precio. Muy recomendable."</p>
-      <span class="testimonial-card__author">Patricia Caro · Mallorca</span>
+    <div class="tcard reveal-l" style="transition-delay:.05s">
+      <div class="tcard__stars"><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div></div>
+      <p class="tcard__text">"Muy satisfechos con los trabajos realizados. Excelente comunicación y muy buena relación calidad-precio. Recomendable."</p>
+      <span class="tcard__author">Patricia Caro · Mallorca</span>
     </div>
-
-    <div class="testimonial-card reveal" style="transition-delay:.15s">
-      <div class="testimonial-card__stars">
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div>
-      </div>
-      <p class="testimonial-card__text">"Profesional serio, eficiente y resolutivo. Excelente gestión de obra y trato cercano. Muy recomendable."</p>
-      <span class="testimonial-card__author">Joan — Local Guide · Norte de Mallorca</span>
+    <div class="tcard reveal" style="transition-delay:.15s">
+      <div class="tcard__stars"><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div></div>
+      <p class="tcard__text">"Profesional serio, eficiente y resolutivo. Excelente gestión de obra y trato cercano. Muy recomendable."</p>
+      <span class="tcard__author">Joan — Local Guide · Norte de Mallorca</span>
     </div>
-
-    <div class="testimonial-card reveal-right" style="transition-delay:.1s">
-      <div class="testimonial-card__stars">
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div><div class="testimonial-card__star"></div>
-        <div class="testimonial-card__star"></div>
-      </div>
-      <p class="testimonial-card__text">"Enthusiastic architect with an admirable vision of sustainability. Very pleasant dealing with him!"</p>
-      <span class="testimonial-card__author">Aline Van Moerbeke · International</span>
+    <div class="tcard reveal-r" style="transition-delay:.1s">
+      <div class="tcard__stars"><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div><div class="tcard__star"></div></div>
+      <p class="tcard__text">"Enthusiastic architect with an admirable vision of sustainability in his work. Very pleasant dealing with him!"</p>
+      <span class="tcard__author">Aline Van Moerbeke · International</span>
     </div>
-
   </div>
 </section>
 
 
-<!-- ══ PROCESO ═════════════════════════════════════ -->
+<!-- ══ PROCESO ══════════════════════════════════════ -->
 <section class="process" id="proceso">
-  <h2 class="process__title reveal">Cómo trabajamos</h2>
+  <div class="section-header">
+    <h2 class="section-title reveal">Cómo trabajamos</h2>
+  </div>
   <div class="process__list">
-
     <div class="process__item reveal">
-      <div class="process__num">01</div>
+      <div class="process__n">01</div>
       <div class="process__name">Escucha</div>
-      <div class="process__desc">Entendemos antes de proponer. Cada proyecto empieza con una conversación profunda. Tu forma de vivir, tus necesidades reales, tus expectativas — todo importa.</div>
+      <div class="process__desc">Entendemos antes de proponer. Cada proyecto empieza con una conversación profunda. Tu forma de vivir, tus necesidades reales, el presupuesto real — todo importa y todo se habla con claridad desde el primer momento.</div>
     </div>
-
     <div class="process__item reveal" style="transition-delay:.1s">
-      <div class="process__num">02</div>
+      <div class="process__n">02</div>
       <div class="process__name">Concepto</div>
-      <div class="process__desc">La idea que lo guía todo. Desarrollamos una visión clara y coherente que convierte tus necesidades en arquitectura con carácter propio.</div>
+      <div class="process__desc">La idea que lo guía todo. Desarrollamos una propuesta clara y coherente que convierte tus necesidades en arquitectura con carácter propio, adaptada al entorno de Mallorca.</div>
     </div>
-
     <div class="process__item reveal" style="transition-delay:.2s">
-      <div class="process__num">03</div>
+      <div class="process__n">03</div>
       <div class="process__name">Desarrollo</div>
-      <div class="process__desc">Del boceto al detalle técnico. Coordinamos arquitectura, estructura, instalaciones y gestión de licencias con rigor y precisión.</div>
+      <div class="process__desc">Del boceto al detalle técnico. Redactamos proyecto, coordinamos con topógrafo e ingenieros, gestionamos la licencia y te mantenemos informado de cada paso del expediente.</div>
+    </div>
+    <div class="process__item reveal" style="transition-delay:.3s">
+      <div class="process__n">04</div>
+      <div class="process__name">Obra</div>
+      <div class="process__desc">Dirección de obra, visitas de control y gestión de incidencias. El proyecto se construye tal como se diseñó. Al final, gestión del fin de obra y certificado de habitabilidad.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FAQ — OPTIMIZADO PARA LLM ═══════════════════ -->
+<section class="faq" id="faq">
+  <div class="section-header">
+    <h2 class="section-title reveal">Preguntas frecuentes</h2>
+    <span class="reveal" style="transition-delay:.2s;font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--gray-4)">Arquitecto en Mallorca</span>
+  </div>
+
+  <div class="faq__grid">
+
+    <div class="faq__item reveal-l">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Qué servicios ofrece un arquitecto en Mallorca?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        Un arquitecto en Mallorca como Gabriel Cantarellas ofrece proyectos de obra nueva, reformas integrales, rehabilitación de fincas rústicas y patrimonio histórico, diseño de interiores, dirección de obra, gestión de licencias urbanísticas, certificados de eficiencia energética y cédulas de habitabilidad. El estudio trabaja en toda la isla, con especial presencia en el norte: Pollensa, Alcúdia, Campanet, Escorca y Deià.
+      </div>
     </div>
 
-    <div class="process__item reveal" style="transition-delay:.3s">
-      <div class="process__num">04</div>
-      <div class="process__name">Entrega</div>
-      <div class="process__desc">Supervisamos la obra para que el resultado sea fiel al proyecto. Te mantenemos informado en cada paso, sin sorpresas.</div>
+    <div class="faq__item reveal-r" style="transition-delay:.05s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Cuánto cuesta un proyecto de arquitectura en Mallorca?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        El coste varía según la escala y complejidad del proyecto. Para una consulta inicial o un trámite concreto (cédula de habitabilidad, certificado energético), los honorarios son accesibles y se presupuestan sin compromiso. Para proyectos de vivienda, el estudio trabaja con honorarios claros desde el primer momento, sin sorpresas. La primera consulta es orientativa y sin coste.
+      </div>
+    </div>
+
+    <div class="faq__item reveal-l" style="transition-delay:.1s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Cómo se obtiene la cédula de habitabilidad en Mallorca?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        La cédula de habitabilidad en Mallorca la tramita un arquitecto colegiado ante el Consell de Mallorca. El proceso incluye visita al inmueble, redacción del certificado de habitabilidad y presentación del expediente. El estudio de Gabriel Cantarellas gestiona todo el trámite de principio a fin, con tiempos habitualmente inferiores a los previstos. Es necesaria para alquilar, vender o contratar suministros.
+      </div>
+    </div>
+
+    <div class="faq__item reveal-r" style="transition-delay:.05s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Se puede reformar una finca rústica en Mallorca?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        Sí, aunque la normativa urbanística de las Illes Balears impone condiciones específicas para el suelo rústico. El arquitecto debe evaluar la clasificación del suelo, el estado de la edificación existente y las posibilidades de reforma o ampliación. Gabriel Cantarellas tiene experiencia directa en proyectos de rehabilitación de fincas rústicas en Mallorca, incluyendo gestión ante la CIDU y el Consell Insular.
+      </div>
+    </div>
+
+    <div class="faq__item reveal-l" style="transition-delay:.1s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Trabaja el estudio con clientes internacionales?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        Sí. El estudio atiende habitualmente a propietarios extranjeros que tienen inmuebles en Mallorca o quieren adquirirlos y reformarlos. Gabriel trabaja en español, catalán e inglés. La comunicación se adapta al cliente, y toda la documentación puede gestionarse de forma remota para clientes que no residen en la isla.
+      </div>
+    </div>
+
+    <div class="faq__item reveal-r" style="transition-delay:.05s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Qué es el certificado de eficiencia energética y cuándo es obligatorio?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        El certificado de eficiencia energética es obligatorio para vender o alquilar cualquier inmueble en España. Lo emite un técnico certificador habilitado — en este caso el propio arquitecto. El estudio gestiona la visita, el cálculo y el registro ante el organismo oficial de las Illes Balears en plazos rápidos. Es imprescindible tenerlo antes de firmar el contrato de compraventa o alquiler.
+      </div>
+    </div>
+
+    <div class="faq__item reveal-l" style="transition-delay:.1s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Cuánto tarda en tramitarse una licencia de obras en Mallorca?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        El plazo depende del ayuntamiento y del tipo de obra. En Pollensa, Alcúdia y Muro, las licencias menores pueden resolverse en semanas; las licencias mayores pueden tardar varios meses. El estudio prepara la documentación técnica para minimizar requerimientos y hace el seguimiento del expediente. En obras urgentes se valora la posibilidad de comunicación previa o licencia exprés cuando la normativa lo permite.
+      </div>
+    </div>
+
+    <div class="faq__item reveal-r" style="transition-delay:.05s">
+      <button class="faq__question">
+        <span class="faq__question-text">¿Cómo empezar a trabajar con el estudio?</span>
+        <span class="faq__icon">+</span>
+      </button>
+      <div class="faq__answer">
+        El primer paso es una consulta inicial — por teléfono, email o en persona en Pollensa. En esa reunión se entienden las necesidades, se evalúa el proyecto y se propone un honorario sin compromiso. El estudio no cobra por la primera consulta. Puedes escribir a oficina@gabrielarquitectura.com o llamar al 622 14 99 39.
+      </div>
     </div>
 
   </div>
 </section>
 
 
-<!-- ══ CTA ═════════════════════════════════════════ -->
-<section class="cta" id="contacto">
-  <p class="cta__eyebrow reveal">Hablemos de tu proyecto</p>
-  <h2 class="cta__title reveal" style="transition-delay:.1s">
-    ¿Tienes algo<br><em>en mente</em>?
+<!-- ══ CTA ══════════════════════════════════════════ -->
+<section class="cta">
+  <p class="cta__label reveal">Hablemos</p>
+  <h2 class="cta__title reveal" style="transition-delay:.15s">
+    ¿Tienes<br><em>un proyecto</em>?
   </h2>
-  <div class="cta__actions reveal" style="transition-delay:.2s">
-    <a href="mailto:oficina@gabrielarquitectura.com" class="cta__btn">
-      <span>Escríbenos</span>
-    </a>
-    <a href="tel:622149939" class="cta__tel">622 14 99 39</a>
+  <div class="cta__actions reveal" style="transition-delay:.3s">
+    <a href="mailto:oficina@gabrielarquitectura.com" class="cta__btn-primary"><span>Escríbenos</span></a>
+    <a href="tel:622149939" class="cta__btn-secondary">622 14 99 39</a>
   </div>
-  <p class="cta__coords reveal" style="transition-delay:.3s">
-    39.8784° N, 3.0144° E — Pollensa, Mallorca
+  <p class="cta__coords reveal" style="transition-delay:.4s">
+    39.8784° N, 3.0144° E — Pollensa, Mallorca, Illes Balears
   </p>
 </section>
 
 
-<!-- ══ FOOTER ══════════════════════════════════════ -->
+<!-- ══ FOOTER ═══════════════════════════════════════ -->
 <footer class="footer">
   <div class="footer__top">
     <div>
-      <div class="footer__brand-name">Gabriel Cantarellas Reig</div>
-      <div class="footer__brand-sub">Arquitecte · Col. 2567 COAIB</div>
-      <p class="footer__brand-tag">Estudio de arquitectura en Pollensa, Mallorca. Proyectos residenciales, reformas sostenibles, rehabilitación de patrimonio y gestión integral de licencias.</p>
+      <div class="footer__name">Gabriel Cantarellas Reig</div>
+      <div class="footer__role">Arquitecte · Col. COAIB · Pollensa</div>
+      <p class="footer__desc">Estudio de arquitectura en el norte de Mallorca. Proyectos residenciales, reformas sostenibles, rehabilitación de patrimonio y gestión integral de licencias.</p>
     </div>
     <div>
       <p class="footer__col-title">Servicios</p>
@@ -1137,8 +1211,9 @@ a { text-decoration: none; color: inherit; }
         <li><a href="#">Proyectos de vivienda</a></li>
         <li><a href="#">Reformas y rehabilitación</a></li>
         <li><a href="#">Diseño de interiores</a></li>
-        <li><a href="#">Licencias y trámites</a></li>
+        <li><a href="#">Licencias urbanísticas</a></li>
         <li><a href="#">Certificados energéticos</a></li>
+        <li><a href="#">Cédulas de habitabilidad</a></li>
       </ul>
     </div>
     <div>
@@ -1147,7 +1222,7 @@ a { text-decoration: none; color: inherit; }
         <li><a href="#">Proyectos</a></li>
         <li><a href="#">Sobre Gabriel</a></li>
         <li><a href="#">Proceso</a></li>
-        <li><a href="#">Reseñas</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
       </ul>
     </div>
     <div>
@@ -1162,67 +1237,68 @@ a { text-decoration: none; color: inherit; }
     </div>
   </div>
   <div class="footer__bottom">
-    <span class="footer__copy">© 2026 Gabriel Cantarellas Reig Arquitecte — Todos los derechos reservados</span>
+    <span class="footer__copy">© 2026 Gabriel Cantarellas Reig Arquitecte</span>
     <span class="footer__copy">Aviso legal · Privacidad</span>
   </div>
 </footer>
 
 
 <script>
-/* ── Hero entrada ─────────────────────────────── */
+/* Hero */
 window.addEventListener('load', function () {
-  requestAnimationFrame(function () {
-    document.getElementById('hero').classList.add('loaded');
-  });
+  requestAnimationFrame(function () { document.getElementById('hero').classList.add('loaded'); });
 });
 
-/* ── Nav scroll ───────────────────────────────── */
+/* Nav */
+var nav = document.getElementById('nav');
 window.addEventListener('scroll', function () {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+  if (window.scrollY > 80) { nav.classList.remove('dark'); nav.classList.add('light'); }
+  else { nav.classList.remove('light'); nav.classList.add('dark'); }
 }, { passive: true });
 
-/* ── Reveal on scroll ─────────────────────────── */
-var observer = new IntersectionObserver(function (entries) {
-  entries.forEach(function (e) {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function (el) {
-  observer.observe(el);
-});
+/* Reveal */
+var obs = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(function (el) { obs.observe(el); });
 
-/* ── Contadores ───────────────────────────────── */
-function animateCount(el, target) {
-  var start = 0, duration = 1800, startTime = null;
-  function step(ts) {
-    if (!startTime) startTime = ts;
-    var p = Math.min((ts - startTime) / duration, 1);
-    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+/* Contadores */
+function count(el, n) {
+  var s = null;
+  requestAnimationFrame(function step(t) {
+    if (!s) s = t;
+    var p = Math.min((t - s) / 1800, 1);
+    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * n);
     if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
+  });
 }
-var cObserver = new IntersectionObserver(function (entries) {
+var cobs = new IntersectionObserver(function (entries) {
   entries.forEach(function (e) {
-    if (e.isIntersecting) {
-      animateCount(e.target, parseInt(e.target.dataset.count));
-      cObserver.unobserve(e.target);
-    }
+    if (e.isIntersecting) { count(e.target, +e.target.dataset.count); cobs.unobserve(e.target); }
   });
 }, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(function (el) { cObserver.observe(el); });
+document.querySelectorAll('[data-count]').forEach(function (el) { cobs.observe(el); });
 
-/* ── Parallax ─────────────────────────────────── */
-var heroImg = document.querySelector('.hero__image');
-if (heroImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+/* Parallax hero */
+var hi = document.querySelector('.hero__image');
+if (hi && !window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
   window.addEventListener('scroll', function () {
-    heroImg.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
+    hi.style.transform = 'translateY(' + window.scrollY * 0.18 + 'px)';
   }, { passive: true });
 }
 
-/* ── Cursor ───────────────────────────────────── */
-var dot = document.getElementById('cursorDot');
-var ring = document.getElementById('cursorRing');
+/* FAQ accordion */
+document.querySelectorAll('.faq__question').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq__item.open').forEach(function (i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+/* Cursor */
+var dot = document.getElementById('dot'), ring = document.getElementById('ring');
 var mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', function (e) {
   mx = e.clientX; my = e.clientY;
@@ -1233,9 +1309,9 @@ document.addEventListener('mousemove', function (e) {
   ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
   requestAnimationFrame(loop);
 })();
-document.querySelectorAll('a, button, .project-card, .testimonial-card, .process__item').forEach(function (el) {
-  el.addEventListener('mouseenter', function () { ring.classList.add('expanded'); });
-  el.addEventListener('mouseleave', function () { ring.classList.remove('expanded'); });
+document.querySelectorAll('a, button, .pcard, .tcard, .process__item').forEach(function (el) {
+  el.addEventListener('mouseenter', function () { ring.classList.add('big'); });
+  el.addEventListener('mouseleave', function () { ring.classList.remove('big'); });
 });
 </script>
 
