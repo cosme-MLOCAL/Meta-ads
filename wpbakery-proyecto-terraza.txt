@@ -1,0 +1,75 @@
+
+================================================================
+SHORTCODES WPBAKERY — PROYECTO TERRAZA EN CUBIERTA · POLLENÇA
+Gabriel Arquitectura GCR
+================================================================
+INSTRUCCIONES:
+1. Ve a la página en WordPress
+2. Haz clic en "Editor clásico" (si no lo ves, activa el plugin Classic Editor)
+3. Pestaña "Texto" (no Visual)
+4. Borra todo y pega el bloque de shortcodes de abajo
+5. Guarda → abre con WPBakery → verás todos los bloques
+6. Para las imágenes: ve a Biblioteca de medios → clic en la foto → copia el ID (número en la URL)
+   Reemplaza ADD_IMAGE_ID_1, ADD_IMAGE_ID_2, etc. por esos números
+================================================================
+
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 1 — HERO                               -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-hero"][vc_column el_class="ga-hero-inner"][vc_empty_space height="140px"][vc_custom_heading text="Pollença · Mallorca · Reforma" font_container="tag:p|text_align:left|color:%238A8A8A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-label-top"][vc_empty_space height="24px"][vc_custom_heading text="Reforma de vivienda con terraza privada en cubierta" font_container="tag:h1|text_align:left|color:%23F6F6F4" google_fonts="font_family:Cormorant+Garamond%3A300%2C400%2C500|font_style:300+light+regular%3A300%3Anormal" el_class="ga-title-display"][vc_empty_space height="16px"][vc_custom_heading text="Aprovechamiento de cubierta — escalera interior — terraza con vistas al Calvario y Puig de Maria" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:Cormorant+Garamond%3A300%2C400|font_style:300+light+italic%3A300%3Aitalic" el_class="ga-subtitle-hero"][vc_empty_space height="60px"][vc_single_image image="ADD_IMAGE_ID_3" img_size="full" alignment="center" el_class="ga-hero-image"][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 2 — FICHA TÉCNICA (datos en columnas)  -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-data"][vc_column width="1/4" el_class="ga-data-col"][vc_custom_heading text="Tipo de proyecto" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-label"][vc_custom_heading text="Reforma y ampliación en cubierta" font_container="tag:p|text_align:left|color:%23F6F6F4" google_fonts="font_family:DM+Sans%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-value"][/vc_column][vc_column width="1/4" el_class="ga-data-col"][vc_custom_heading text="Ubicación" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-label"][vc_custom_heading text="Pollença, Mallorca" font_container="tag:p|text_align:left|color:%23F6F6F4" google_fonts="font_family:DM+Sans%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-value"][/vc_column][vc_column width="1/4" el_class="ga-data-col"][vc_custom_heading text="Servicios" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-label"][vc_custom_heading text="Proyecto · Dirección de obra · Licencia" font_container="tag:p|text_align:left|color:%23F6F6F4" google_fonts="font_family:DM+Sans%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-value"][/vc_column][vc_column width="1/4" el_class="ga-data-col"][vc_custom_heading text="Estudio" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-label"][vc_custom_heading text="Gabriel Cantarellas Reig · Arquitecto" font_container="tag:p|text_align:left|color:%23F6F6F4" google_fonts="font_family:DM+Sans%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-value"][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 3 — INTRODUCCIÓN EDITORIAL             -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-intro"][vc_column width="1/3" el_class="ga-intro-aside"][vc_custom_heading text="01" font_container="tag:p|text_align:left|color:%23E8E8E8" google_fonts="font_family:Cormorant+Garamond%3A300%2C400|font_style:300+light+italic%3A300%3Aitalic" el_class="ga-intro-num"][vc_empty_space height="24px"][vc_custom_heading text="Categorías" font_container="tag:p|text_align:left|color:%238A8A8A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-label"][vc_column_text el_class="ga-tag-list"]<span class="ga-tag">Reforma</span> <span class="ga-tag">Cubierta</span> <span class="ga-tag">Interiorismo</span> <span class="ga-tag">Mallorca</span> <span class="ga-tag">Pollença</span>[/vc_column_text][/vc_column][vc_column width="2/3" el_class="ga-intro-body"][vc_custom_heading text="Maximizar el potencial de lo que ya existe." font_container="tag:h2|text_align:left|color:%230A0A0A" google_fonts="font_family:Cormorant+Garamond%3A300%2C400%2C500|font_style:400+regular%3A400%3Anormal" el_class="ga-section-heading"][vc_empty_space height="32px"][vc_column_text el_class="ga-body-text"]En esta vivienda en planta segunda, la propiedad quiso <strong>maximizar su potencial con el uso de la cubierta</strong>. Después de llegar a un acuerdo con el uso privado con la comunidad, decidió abrir un hueco para realizar una escalera interior — el edificio no tiene acceso comunitario en cubierta por escalera — y de este modo usarlo como terraza para su vivienda.[/vc_column_text][vc_empty_space height="20px"][vc_column_text el_class="ga-body-text"]El resultado es espléndido, <strong>aprovechando al máximo el hueco de la escalera utilizándolo como mueble de cocina</strong>. En cubierta, vemos las razones de esta mejora: la búsqueda de las vistas del pueblo de Pollença, por la zona norte el Calvario y por la zona sur el Puig de Maria.[/vc_column_text][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 4 — GALERÍA (2 imágenes lado a lado)   -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-gallery"][vc_column width="1/2" el_class="ga-gallery-col"][vc_single_image image="ADD_IMAGE_ID_4" img_size="full" el_class="ga-gallery-img"][/vc_column][vc_column width="1/2" el_class="ga-gallery-col"][vc_single_image image="ADD_IMAGE_ID_5" img_size="full" el_class="ga-gallery-img"][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 5 — EL RETO                            -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-challenge"][vc_column width="1/4" el_class="ga-section-label-col"][vc_custom_heading text="— El reto" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-section-label"][/vc_column][vc_column width="3/4" el_class="ga-section-content"][vc_custom_heading text="Un espacio sin usar sobre la vida cotidiana." font_container="tag:h2|text_align:left|color:%23F6F6F4" google_fonts="font_family:Cormorant+Garamond%3A300%2C400|font_style:300+light+italic%3A300%3Aitalic" el_class="ga-section-heading-dark"][vc_empty_space height="28px"][vc_column_text el_class="ga-body-text-dark"]La vivienda ocupaba la segunda planta de un edificio del casco histórico de Pollença. La cubierta existía — plana, accesible técnicamente — pero sin ningún acceso desde el interior de la vivienda. El edificio no disponía de escalera comunitaria hasta cubierta, por lo que cualquier aprovechamiento requería una solución propia.[/vc_column_text][vc_empty_space height="20px"][vc_column_text el_class="ga-body-text-dark"]El reto era doble: <strong>obtener el acuerdo de la comunidad de propietarios</strong> para el uso privativo de la cubierta correspondiente, y diseñar un acceso interior que no comprometiera la distribución de la vivienda existente ni generara pérdida de superficie útil.[/vc_column_text][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 6 — IMAGEN CENTRAL (foto 2 — acceso)  -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-image-break"][vc_column][vc_single_image image="ADD_IMAGE_ID_2" img_size="full" alignment="center" el_class="ga-full-image"][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 7 — LA SOLUCIÓN                        -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-solution"][vc_column width="1/2" el_class="ga-solution-text"][vc_custom_heading text="— La solución" font_container="tag:p|text_align:left|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-section-label"][vc_empty_space height="24px"][vc_custom_heading text="El hueco de la escalera se convierte en mueble de cocina." font_container="tag:h2|text_align:left|color:%230A0A0A" google_fonts="font_family:Cormorant+Garamond%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-section-heading"][vc_empty_space height="28px"][vc_column_text el_class="ga-body-text"]La escalera, de <strong>estructura metálica con revestimiento de madera de roble</strong>, nace en la cocina y sube hasta la cubierta. El espacio generado bajo y alrededor de la escalera se integra como mobiliario de cocina: electrodomésticos, almacenaje y encimera aprovechan cada centímetro de la estructura portante. Nada se pierde.[/vc_column_text][vc_empty_space height="20px"][vc_column_text el_class="ga-body-text"]En cubierta, la terraza se construye sobre un <strong>sistema de plots regulables con suelo técnico en porcelánico de gran formato</strong>. Esta solución mejora el aislamiento térmico del forjado existente, permite el registro de instalaciones y ofrece un acabado impecable.[/vc_column_text][/vc_column][vc_column width="1/2" el_class="ga-solution-image"][vc_single_image image="ADD_IMAGE_ID_1" img_size="full" el_class="ga-side-image"][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 8 — EL RESULTADO                       -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-result"][vc_column el_class="ga-result-inner"][vc_custom_heading text="— El resultado" font_container="tag:p|text_align:center|color:%235A5A5A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-section-label-center"][vc_empty_space height="24px"][vc_custom_heading text="Una terraza privada sobre los tejados de Pollença." font_container="tag:h2|text_align:center|color:%23F6F6F4" google_fonts="font_family:Cormorant+Garamond%3A300%2C400|font_style:300+light+italic%3A300%3Aitalic" el_class="ga-result-heading"][vc_empty_space height="40px"][/vc_column][/vc_row]
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-result-gallery"][vc_column width="1/3" el_class="ga-gallery-col"][vc_single_image image="ADD_IMAGE_ID_3" img_size="full" el_class="ga-gallery-img"][/vc_column][vc_column width="1/3" el_class="ga-gallery-col"][vc_single_image image="ADD_IMAGE_ID_4" img_size="full" el_class="ga-gallery-img"][/vc_column][vc_column width="1/3" el_class="ga-gallery-col"][vc_single_image image="ADD_IMAGE_ID_5" img_size="full" el_class="ga-gallery-img"][/vc_column][/vc_row]
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-result"][vc_column width="1/3"][/vc_column][vc_column width="1/3" el_class="ga-result-body"][vc_empty_space height="20px"][vc_column_text el_class="ga-body-text-dark"]Vistas al <strong>Calvario por el norte</strong> y al <strong>Puig de Maria por el sur</strong>. Una terraza donde cenar en las noches de verano mallorquinas o practicar deporte con el pueblo a los pies. La mejora fue tan visible que el vecino de escalera encargó al estudio el mismo proyecto para su parte de cubierta.[/vc_column_text][vc_empty_space height="40px"][/vc_column][vc_column width="1/3"][/vc_column][/vc_row]
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECCIÓN 9 — CIERRE SEO                         -->
+<!-- ═══════════════════════════════════════════════ -->
+
+[vc_row full_width="stretch_row_content_no_spaces" el_class="ga-project-seo"][vc_column width="1/4"][vc_custom_heading text="Arquitectura en Pollença" font_container="tag:p|text_align:left|color:%238A8A8A" google_fonts="font_family:DM+Mono%3A300%2C400|font_style:400+regular%3A400%3Anormal" el_class="ga-data-label"][/vc_column][vc_column width="3/4"][vc_column_text el_class="ga-seo-text"]<strong>Reforma de vivienda en Pollença, Mallorca.</strong> Este proyecto de aprovechamiento de cubierta, realizado por <strong>Gabriel Cantarellas Reig, arquitecto en Pollença</strong>, demuestra que una reforma bien planteada puede transformar completamente el potencial de una vivienda en el casco histórico de Mallorca.
+
+El estudio trabaja en toda la isla con proyectos residenciales, rehabilitación de patrimonio y gestión integral de licencias: desde la solicitud inicial hasta la cédula de habitabilidad. Si tienes una vivienda en Pollença, Alcúdia, Campanet o en el norte de Mallorca y quieres estudiar su potencial, <a href="/contacto"><strong>contacta con el estudio</strong></a>.[/vc_column_text][vc_empty_space height="20px"][vc_separator color="custom" accent_color="#E8E8E8"][vc_empty_space height="20px"][vc_column_text el_class="ga-seo-meta"]Gabriel Arquitectura GCR · Arquitecto colegiado COAIB · Pollença, Mallorca · <a href="tel:622149939">622 14 99 39</a> · <a href="mailto:oficina@gabrielarquitectura.com">oficina@gabrielarquitectura.com</a>[/vc_column_text][vc_empty_space height="60px"][/vc_column][/vc_row]
