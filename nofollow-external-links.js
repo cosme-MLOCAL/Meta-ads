@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
       link.setAttribute('target', '_blank');
     }
 
-    // mailto y tel — nofollow sin noopener (no abren ventana)
-    if (/^mailto:/i.test(href) || /^tel:/i.test(href)) {
+    // mailto, tel y whatsapp — nofollow sin noopener (no abren ventana del navegador)
+    if (/^mailto:/i.test(href) || /^tel:/i.test(href) || /^https?:\/\/(wa\.me|api\.whatsapp\.com)/i.test(href)) {
       link.setAttribute('rel', 'nofollow');
     }
   });
