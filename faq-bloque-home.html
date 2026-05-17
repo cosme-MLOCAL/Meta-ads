@@ -1,0 +1,156 @@
+<style>
+.ga-faq { max-width: 860px; margin: 0 auto; padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 2rem); }
+.ga-faq__label { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8A8A; margin-bottom: 1rem; }
+.ga-faq__heading { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; color: #0A0A0A; margin-bottom: 0.8rem; }
+.ga-faq__heading em { font-style: italic; color: #5A5A5A; }
+.ga-faq__intro { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #5A5A5A; line-height: 1.7; margin-bottom: 3rem; }
+.ga-faq__list { border-top: 1px solid #E8E8E8; }
+.ga-faq__item { border-bottom: 1px solid #E8E8E8; }
+.ga-faq__question { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 0; text-align: left; }
+.ga-faq__question-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.05rem, 1.6vw, 1.2rem); font-weight: 400; line-height: 1.35; color: #0A0A0A; transition: color 0.2s; }
+.ga-faq__icon { flex-shrink: 0; width: 24px; height: 24px; border: 1px solid #C8C8C8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #8A8A8A; font-size: 1rem; line-height: 1; margin-top: 0.1rem; transition: border-color 0.25s, color 0.25s, transform 0.35s cubic-bezier(0.16,1,0.3,1); }
+.ga-faq__item.open .ga-faq__icon { border-color: #0A0A0A; color: #0A0A0A; transform: rotate(45deg); }
+.ga-faq__answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1); }
+.ga-faq__answer-inner { padding: 0 2rem 1.6rem 0; font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.8; color: #2E2E2E; }
+.ga-faq__answer-inner strong { color: #0A0A0A; font-weight: 500; }
+.ga-faq__answer-inner a { color: #0A0A0A; border-bottom: 1px solid #C8C8C8; text-decoration: none; transition: border-color 0.2s; }
+.ga-faq__answer-inner a:hover { border-color: #0A0A0A; }
+@media (max-width: 640px) { .ga-faq__answer-inner { padding-right: 0; } }
+</style>
+
+<div class="ga-faq">
+
+  <p class="ga-faq__label">FAQ</p>
+  <h2 class="ga-faq__heading">Preguntas <em>frecuentes.</em></h2>
+  <p class="ga-faq__intro">Resolvemos las dudas más habituales sobre proyectos de arquitectura en Mallorca. Si tienes una duda que no aparece aquí, <a href="mailto:info@gabrielarquitectura.com" rel="nofollow">escríbenos</a>.</p>
+
+  <div class="ga-faq__list">
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Cuánto cuesta contratar un arquitecto en Mallorca?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          Los honorarios dependen del tipo de proyecto. Para una <strong>reforma integral</strong>, entre el 8% y el 12% del presupuesto de ejecución. Para <strong>obra nueva</strong>, entre el 10% y el 15%. Proyectos más pequeños o gestión de licencias tienen honorarios fijos desde 1.500 €. Ofrecemos presupuesto sin compromiso adaptado a cada caso.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Qué licencias de obra se necesitan en Mallorca?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          En Mallorca existen dos tipos: la <strong>licencia de obra mayor</strong> — para obras estructurales, ampliaciones o edificios nuevos — y la <strong>licencia de obra menor</strong>, para reformas sin afectación estructural. Los plazos medios son 1–2 meses para obra menor y 3–6 meses para obra mayor. El arquitecto gestiona toda la documentación y el seguimiento ante el ayuntamiento.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Puedo reformar una casa en el casco histórico de Mallorca?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          Sí, pero con condiciones. Los cascos históricos de <strong>Pollença, Alcúdia o Sóller</strong> tienen catálogos de protección que limitan las intervenciones en fachadas, cubiertas y materiales. Tenemos experiencia directa en el casco histórico de Pollença y trabajamos habitualmente con el Ayuntamiento en este tipo de licencias.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Cuánto cuesta una reforma integral en Mallorca en 2025?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          Como referencia orientativa:<br><br>
+          <strong>Reforma básica</strong> (baño + cocina + suelos) — 600–900 €/m²<br>
+          <strong>Reforma integral nivel medio</strong> — 900–1.400 €/m²<br>
+          <strong>Alta calidad con interiorismo</strong> — 1.400–2.200 €/m²<br><br>
+          A esto se suman los honorarios del arquitecto (8–12%) y las tasas de licencia del ayuntamiento.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Cómo es el proceso para encargar un proyecto de reforma?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          <strong>01 — Primera visita</strong> — Visitamos el inmueble y analizamos la normativa.<br>
+          <strong>02 — Propuesta</strong> — Honorarios y calendario orientativo.<br>
+          <strong>03 — Proyecto y licencia</strong> — Redactamos el proyecto, lo visamos y lo presentamos al ayuntamiento.<br>
+          <strong>04 — Dirección de obra</strong> — Supervisamos la ejecución y emitimos el certificado final.<br><br>
+          La primera consulta es <strong>gratuita y sin compromiso</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Trabajáis en toda Mallorca o solo en Pollença?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          El estudio tiene sede en Pollença pero <strong>trabaja en toda la isla</strong>: norte (Alcúdia, Sa Pobla), interior (Inca, Sineu), levante (Manacor, Felanitx) y suroeste (Calvià, Andratx). También trabajamos con <strong>propietarios internacionales</strong> que necesitan un arquitecto local de confianza para gestionar su reforma desde el extranjero.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Hacéis proyectos para compradores extranjeros en Mallorca?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          Sí. Una parte importante de nuestra cartera son compradores internacionales — alemanes, británicos, nórdicos — que adquieren una propiedad en Mallorca y necesitan un arquitecto de confianza. Trabajamos en <strong>español, catalán e inglés</strong> y gestionamos todo el proceso para que el cliente pueda seguir el avance desde su país de residencia.
+        </div>
+      </div>
+    </div>
+
+    <div class="ga-faq__item">
+      <button class="ga-faq__question" aria-expanded="false">
+        <span class="ga-faq__question-text">¿Puedo construir una piscina en suelo rústico en Mallorca?</span>
+        <span class="ga-faq__icon">+</span>
+      </button>
+      <div class="ga-faq__answer">
+        <div class="ga-faq__answer-inner">
+          Depende de la calificación del suelo según el <strong>Plan Territorial de Mallorca</strong>. En suelo rústico común (SRUC) generalmente se permite con limitaciones de superficie. En suelo rústico protegido (SRP) las restricciones son mayores. Es imprescindible consultar con un arquitecto antes de iniciar cualquier obra en rústico para evitar expedientes de disciplina urbanística.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.ga-faq__question').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.ga-faq__item');
+      var answer = item.querySelector('.ga-faq__answer');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.ga-faq__item.open').forEach(function(o){
+        o.classList.remove('open');
+        o.querySelector('.ga-faq__answer').style.maxHeight = '0';
+        o.querySelector('.ga-faq__question').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+})();
+</script>
