@@ -1,0 +1,379 @@
+================================================================
+SEO COMPLETO — "ARQUITECTO EN MALLORCA"
+gabrielarquitectura.com · Gabriel Cantarellas Reig
+================================================================
+
+
+════════════════════════════════════════════════════════════
+1. META TAGS — HOME (pegar en Bridge Options → Custom Head)
+════════════════════════════════════════════════════════════
+
+<!-- TITLE + DESCRIPTION -->
+<title>Arquitecto en Mallorca | Gabriel Cantarellas Reig | Pollença</title>
+<meta name="description" content="Arquitecto en Mallorca con estudio en Pollença. Proyectos de vivienda, reformas sostenibles, rehabilitación de patrimonio y licencias urbanísticas. Gabriel Cantarellas Reig — Arquitecte COAIB. Llama al 622 14 99 39.">
+<meta name="keywords" content="arquitecto mallorca, arquitecto pollença, arquitecto norte mallorca, reforma vivienda mallorca, proyecto vivienda mallorca, arquitecto alcudia, cédula habitabilidad mallorca, certificado energético mallorca, rehabilitación finca rústica mallorca, architect mallorca english">
+
+<!-- CANONICAL -->
+<link rel="canonical" href="https://gabrielarquitectura.com/">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Gabriel Arquitectura GCR">
+<meta property="og:title" content="Arquitecto en Mallorca | Gabriel Cantarellas Reig | Pollença">
+<meta property="og:description" content="Arquitecto en Mallorca con estudio en Pollença. Proyectos de vivienda, reformas, rehabilitación de patrimonio y licencias. Gabriel Cantarellas Reig — Arquitecte COAIB.">
+<meta property="og:url" content="https://gabrielarquitectura.com/">
+<meta property="og:image" content="https://gabrielarquitectura.com/wp-content/uploads/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gabriel Cantarellas Reig — Arquitecto en Mallorca">
+
+<!-- TWITTER / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arquitecto en Mallorca | Gabriel Cantarellas Reig">
+<meta name="twitter:description" content="Estudio de arquitectura en Pollença, Mallorca. Proyectos de vivienda, reformas y rehabilitación de patrimonio.">
+<meta name="twitter:image" content="https://gabrielarquitectura.com/wp-content/uploads/og-home.jpg">
+
+<!-- GEO META (señales locales) -->
+<meta name="geo.region" content="ES-PM">
+<meta name="geo.placename" content="Pollença, Mallorca">
+<meta name="geo.position" content="39.8784;3.0144">
+<meta name="ICBM" content="39.8784, 3.0144">
+
+<!-- HREFLANG (si tienes versión en inglés) -->
+<link rel="alternate" hreflang="es" href="https://gabrielarquitectura.com/">
+<link rel="alternate" hreflang="en" href="https://gabrielarquitectura.com/en/">
+<link rel="alternate" hreflang="ca" href="https://gabrielarquitectura.com/ca/">
+<link rel="alternate" hreflang="x-default" href="https://gabrielarquitectura.com/">
+
+
+════════════════════════════════════════════════════════════
+2. SCHEMA.ORG COMPLETO — HOME
+(pegar en Bridge Options → Custom Code → Head)
+════════════════════════════════════════════════════════════
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "WebSite",
+      "@id": "https://gabrielarquitectura.com/#website",
+      "url": "https://gabrielarquitectura.com",
+      "name": "Gabriel Arquitectura GCR",
+      "description": "Arquitecto en Mallorca — estudio en Pollença",
+      "inLanguage": ["es","ca","en"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://gabrielarquitectura.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+
+    {
+      "@type": ["LocalBusiness","ProfessionalService"],
+      "@id": "https://gabrielarquitectura.com/#business",
+      "name": "Gabriel Arquitectura GCR",
+      "alternateName": "Gabriel Cantarellas Reig Arquitecte",
+      "legalName": "Gabriel Cantarellas Reig",
+      "description": "Arquitecto en Mallorca con estudio en Pollença. Proyectos de vivienda de lujo, reformas sostenibles, rehabilitación de patrimonio histórico, diseño de interiores, dirección de obra y gestión de licencias urbanísticas. Atención personalizada en español, catalán e inglés.",
+      "url": "https://gabrielarquitectura.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gabrielarquitectura.com/wp-content/uploads/logo-gabriel-arquitectura.png",
+        "width": 300,
+        "height": 100
+      },
+      "image": "https://gabrielarquitectura.com/wp-content/uploads/og-home.jpg",
+      "telephone": "+34622149939",
+      "email": "oficina@gabrielarquitectura.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pollença",
+        "addressRegion": "Illes Balears",
+        "postalCode": "07460",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.8784,
+        "longitude": 3.0144
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Pollença"},
+        {"@type": "City", "name": "Alcúdia"},
+        {"@type": "City", "name": "Campanet"},
+        {"@type": "City", "name": "Sa Pobla"},
+        {"@type": "City", "name": "Muro"},
+        {"@type": "City", "name": "Selva"},
+        {"@type": "City", "name": "Escorca"},
+        {"@type": "City", "name": "Deià"},
+        {"@type": "City", "name": "Sóller"},
+        {"@type": "AdministrativeArea", "name": "Mallorca"},
+        {"@type": "AdministrativeArea", "name": "Illes Balears"}
+      ],
+      "knowsLanguage": [
+        {"@type": "Language", "name": "Spanish", "alternateName": "es"},
+        {"@type": "Language", "name": "Catalan", "alternateName": "ca"},
+        {"@type": "Language", "name": "English", "alternateName": "en"}
+      ],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Transferencia bancaria",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "50",
+        "reviewCount": "50"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Person", "name": "Toni Franco"},
+          "reviewBody": "Tras pasar por una cantidad ingente de arquitectos, por fin encontré una persona preocupada por sus clientes. Siempre informado y actualizado en cada momento."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Person", "name": "Colin Murphy"},
+          "reviewBody": "High quality work delivered on time at a reasonable price. Used Gabriel's services on several occasions. Highly recommend."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+          "author": {"@type": "Person", "name": "Jaume Albertí"},
+          "reviewBody": "Gran professional amb molta passió per l'arquitectura i una gran atenció als detalls. Té molt bon criteri estètic."
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de arquitectura en Mallorca",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Proyectos de vivienda en Mallorca", "description": "Diseño y redacción de proyectos de obra nueva y viviendas unifamiliares en Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reformas integrales en Mallorca", "description": "Reforma y rehabilitación de viviendas con criterio sostenible en el norte de Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Rehabilitación de patrimonio histórico en Mallorca", "description": "Restauración de edificios, fincas rústicas y patrimonio histórico en Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño de interiores Mallorca", "description": "Interiorismo y diseño de espacios residenciales y comerciales en Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dirección de obra Mallorca", "description": "Dirección facultativa y coordinación de obra en proyectos en Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Licencias urbanísticas Mallorca", "description": "Tramitación de licencias de obra ante los ayuntamientos de Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Certificado de eficiencia energética Mallorca", "description": "Certificado energético para compraventa y alquiler en Mallorca"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cédula de habitabilidad Mallorca", "description": "Tramitación de cédulas de habitabilidad ante el Consell de Mallorca"}}
+        ]
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://gabrielarquitectura.com/#gabriel",
+        "name": "Gabriel Cantarellas Reig",
+        "jobTitle": "Arquitecto",
+        "description": "Arquitecto colegiado en el COAIB con estudio en Pollença, Mallorca. Especializado en vivienda de lujo, reformas sostenibles y rehabilitación de patrimonio.",
+        "knowsLanguage": ["es","ca","en"],
+        "worksFor": {"@id": "https://gabrielarquitectura.com/#business"},
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pollença",
+          "addressRegion": "Illes Balears",
+          "addressCountry": "ES"
+        }
+      },
+      "sameAs": [
+        "https://www.google.com/maps?cid=TU_CID_DE_GOOGLE",
+        "https://www.instagram.com/gabrielarquitectura",
+        "https://www.linkedin.com/in/gabriel-cantarellas"
+      ]
+    }
+
+  ]
+}
+</script>
+
+
+════════════════════════════════════════════════════════════
+3. SCHEMA FAQ — para la página de preguntas frecuentes
+(pegar solo en la página /faq o donde tengas las FAQs)
+════════════════════════════════════════════════════════════
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué servicios ofrece un arquitecto en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un arquitecto en Mallorca como Gabriel Cantarellas ofrece proyectos de obra nueva, reformas integrales, rehabilitación de fincas rústicas y patrimonio histórico, diseño de interiores, dirección de obra, gestión de licencias urbanísticas, certificados de eficiencia energética y cédulas de habitabilidad. El estudio trabaja en todo el norte de Mallorca: Pollença, Alcúdia, Campanet, Escorca y Deià."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un proyecto de arquitectura en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El coste varía según la escala del proyecto. Para trámites concretos como cédulas de habitabilidad o certificados energéticos, los honorarios son accesibles y se presupuestan sin compromiso. Para proyectos de vivienda, el estudio trabaja con honorarios transparentes desde el primer momento. La primera consulta es orientativa y sin coste. Llama al 622 14 99 39."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se obtiene la cédula de habitabilidad en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La cédula de habitabilidad en Mallorca la tramita un arquitecto colegiado ante el Consell de Mallorca. El proceso incluye visita al inmueble, redacción del certificado y presentación del expediente. El estudio gestiona todo el trámite de principio a fin, con tiempos habitualmente inferiores a los previstos. Es necesaria para alquilar, vender o contratar suministros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede reformar una finca rústica en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, aunque la normativa urbanística de las Illes Balears impone condiciones específicas para el suelo rústico. El arquitecto debe evaluar la clasificación del suelo y las posibilidades de reforma o ampliación. Gabriel Cantarellas tiene experiencia directa en proyectos de rehabilitación de fincas rústicas en Mallorca, incluyendo gestión ante la CIDU y el Consell Insular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabaja el arquitecto con clientes internacionales en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El estudio atiende habitualmente a propietarios extranjeros con inmuebles en Mallorca. Gabriel trabaja en español, catalán e inglés y gestiona toda la documentación de forma remota para clientes que no residen en la isla."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda una licencia de obras en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del ayuntamiento y del tipo de obra. En Pollença y Alcúdia, las licencias menores pueden resolverse en pocas semanas; las licencias mayores en varios meses. El estudio prepara la documentación para minimizar requerimientos y hace seguimiento del expediente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el certificado de eficiencia energética y cuándo es obligatorio en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El certificado de eficiencia energética es obligatorio para vender o alquilar cualquier inmueble en España, incluida Mallorca. Lo emite un técnico certificador habilitado. El estudio gestiona la visita, el cálculo y el registro ante el organisme oficial de les Illes Balears en plazos rápidos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde está el estudio de arquitectura en Mallorca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El estudio de Gabriel Cantarellas Reig está en Pollença, en el norte de Mallorca. Trabaja en toda la isla, con especial presencia en la zona norte: Pollença, Alcúdia, Campanet, Sa Pobla, Muro y Deià. Puedes contactar por teléfono al 622 14 99 39 o por email a oficina@gabrielarquitectura.com."
+      }
+    }
+  ]
+}
+</script>
+
+
+════════════════════════════════════════════════════════════
+4. SCHEMA BREADCRUMB — para páginas de proyecto
+(pegar en cada página de proyecto individual)
+════════════════════════════════════════════════════════════
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://gabrielarquitectura.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Proyectos",
+      "item": "https://gabrielarquitectura.com/proyectos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Terraza en cubierta · Pollença",
+      "item": "https://gabrielarquitectura.com/proyectos/terraza-cubierta-pollenca/"
+    }
+  ]
+}
+</script>
+
+
+════════════════════════════════════════════════════════════
+5. META TAGS POR PÁGINA
+════════════════════════════════════════════════════════════
+
+── /proyectos ──────────────────────────────────────────────
+<title>Proyectos de Arquitectura en Mallorca | Gabriel Cantarellas Reig</title>
+<meta name="description" content="Proyectos de vivienda, reformas y rehabilitación en Mallorca. Obra nueva, fincas rústicas, interiorismo y rehabilitación de patrimonio histórico en el norte de Mallorca.">
+<link rel="canonical" href="https://gabrielarquitectura.com/proyectos/">
+
+── /estudio ────────────────────────────────────────────────
+<title>Estudio de Arquitectura en Mallorca | Gabriel Cantarellas Reig | Pollença</title>
+<meta name="description" content="Gabriel Cantarellas Reig, arquitecto colegiado COAIB con estudio en Pollença, Mallorca. Proyectos de vivienda de lujo, reformas sostenibles y rehabilitación de patrimonio. Atención en español, catalán e inglés.">
+<link rel="canonical" href="https://gabrielarquitectura.com/estudio/">
+
+── /contacto ───────────────────────────────────────────────
+<title>Contacto | Arquitecto en Mallorca | Gabriel Cantarellas 622 14 99 39</title>
+<meta name="description" content="Contacta con Gabriel Cantarellas Reig, arquitecto en Pollença, Mallorca. Primera consulta sin coste. Teléfono: 622 14 99 39. Email: oficina@gabrielarquitectura.com.">
+<link rel="canonical" href="https://gabrielarquitectura.com/contacto/">
+
+── /faq ────────────────────────────────────────────────────
+<title>Preguntas frecuentes sobre arquitectura en Mallorca | Gabriel Arquitectura</title>
+<meta name="description" content="Respuestas sobre cédulas de habitabilidad, licencias de obra, certificados energéticos, reformas de fincas rústicas y proyectos de vivienda en Mallorca.">
+<link rel="canonical" href="https://gabrielarquitectura.com/faq/">
+
+
+════════════════════════════════════════════════════════════
+6. KEYWORDS POR INTENCIÓN DE BÚSQUEDA
+(úsalas de forma natural en los textos de cada página)
+════════════════════════════════════════════════════════════
+
+INFORMACIONAL (responden a preguntas):
+- cuánto cuesta un arquitecto en mallorca
+- cómo tramitar cédula de habitabilidad mallorca
+- qué necesito para reformar una finca rústica mallorca
+- cuánto tarda una licencia de obras en pollença
+- cuándo es obligatorio el certificado energético mallorca
+- qué hace un arquitecto en una reforma integral
+
+TRANSACCIONAL (buscan contratar):
+- arquitecto en mallorca
+- arquitecto pollença
+- arquitecto norte mallorca
+- arquitecto alcúdia
+- reforma vivienda mallorca
+- proyecto vivienda mallorca
+- arquitecto finca rústica mallorca
+- architect mallorca english
+- arquitecto mallorca precio
+- contratar arquitecto mallorca
+
+LOCAL (geo-específicas):
+- arquitecto pollença mallorca
+- estudio arquitectura pollença
+- arquitecto alcúdia mallorca
+- arquitecto campanet mallorca
+- arquitecto deià mallorca
+- reforma casa pollença
+- obra nueva mallorca norte
+
+LONG TAIL (alta conversión, baja competencia):
+- arquitecto para vivienda lujo mallorca
+- reforma integral casa mallorca presupuesto
+- rehabilitación edificio histórico mallorca
+- cédula habitabilidad pollença urgente
+- certificado energético mallorca precio
+- proyecto ampliación vivienda mallorca
+- arquitecto para compra vivienda mallorca informe
