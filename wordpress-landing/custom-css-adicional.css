@@ -1,0 +1,49 @@
+/*
+  CSS ADICIONAL — pégalo en:
+  Apariencia > Personalizar > CSS adicional
+  (o en el editor de estilos global del Site Editor)
+
+  Este bloque cubre los casos en que el tema Twenty Twenty-Two
+  añade márgenes o rellenos extra alrededor del contenido de la página.
+  Es un complemento al style.css del tema hijo.
+*/
+
+/* Eliminar padding del contenedor principal de Twenty Twenty-Two */
+.wp-site-blocks,
+.entry-content,
+.wp-block-post-content,
+.wp-block-group,
+.is-layout-flow {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Ocultar completamente header y footer en la página de inicio */
+/* (aplica a la plantilla "Portada" o "Página sin cabecera") */
+body.home .wp-block-template-part,
+body.page-template-blank .wp-block-template-part {
+  display: none !important;
+}
+
+/* Alternativa: ocultar por ID de página específica */
+/* Cambia el número 2 por el ID real de tu página de inicio */
+body.page-id-2 .wp-block-template-part {
+  display: none !important;
+}
+
+/* Asegurar que el body no tenga scroll en la home */
+body.home,
+body.page-id-2 {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Fix para Twenty Twenty-Two: eliminar borde/margen de artículo */
+body.home .wp-block-post-content > * {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}

@@ -1,0 +1,181 @@
+/*
+Theme Name: La Font del Gall Child
+Template: twentytwentytwo
+Version: 1.0
+Description: Child theme de Twenty Twenty-Two para La Font del Gall
+*/
+
+/* ============================================================
+   RESET GLOBAL — eliminar header y footer del tema padre
+   ============================================================ */
+.wp-site-blocks {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* una sola pantalla, sin scroll */
+}
+
+/* Ocultar header y footer del Site Editor */
+.wp-block-template-part.site-header,
+header.wp-block-template-part,
+.site-header,
+header[class*="header"],
+.wp-block-group.site-header {
+  display: none !important;
+}
+
+.wp-block-template-part.site-footer,
+footer.wp-block-template-part,
+.site-footer,
+footer[class*="footer"],
+.wp-block-group.site-footer {
+  display: none !important;
+}
+
+/* ============================================================
+   HERO — contenedor principal fullscreen
+   ============================================================ */
+.hero-fullscreen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #1a1a1a; /* fallback mientras carga la imagen */
+}
+
+/* Imagen de fondo */
+.hero-fullscreen .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Capa oscura suave sobre la imagen */
+.hero-fullscreen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 1;
+}
+
+/* Contenido centrado sobre la imagen */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 680px;
+  width: 100%;
+}
+
+/* ============================================================
+   TIPOGRAFÍA
+   ============================================================ */
+.hero-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 40px 0;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+}
+
+/* Botón primario — fondo blanco */
+.hero-btn--primary {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 2px solid #ffffff;
+}
+
+.hero-btn--primary:hover,
+.hero-btn--primary:focus {
+  background: transparent;
+  color: #ffffff;
+}
+
+/* Botón secundario — solo contorno */
+.hero-btn--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+.hero-btn--secondary:hover,
+.hero-btn--secondary:focus {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: #ffffff;
+}
+
+/* ============================================================
+   RESPONSIVE — móvil
+   ============================================================ */
+@media (max-width: 600px) {
+  body {
+    overflow: hidden;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-btn {
+    width: 200px;
+    text-align: center;
+  }
+}
