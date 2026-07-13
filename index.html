@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English for Interviews · Marketing Freelance</title>
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --surface:#ffffff;
+    --text:#1e2433;
+    --text-soft:#5b6478;
+    --brand:#3a6ea5;
+    --brand-dark:#2b527d;
+    --brand-soft:#e8f0fb;
+    --accent:#4fb0a5;
+    --accent-soft:#e4f5f2;
+    --warn:#e0a13a;
+    --error:#d9614f;
+    --error-soft:#fbe9e6;
+    --ok:#3f9d63;
+    --ok-soft:#e7f6ec;
+    --border:#e3e6ee;
+    --radius:14px;
+    --shadow:0 2px 10px rgba(30,36,51,0.06);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    padding-bottom:40px;
+  }
+  header{
+    background:linear-gradient(135deg,var(--brand),var(--brand-dark));
+    color:#fff;
+    padding:22px 16px 18px;
+    text-align:center;
+  }
+  header h1{
+    margin:0 0 4px;
+    font-size:1.3rem;
+    font-weight:700;
+  }
+  header p{
+    margin:0;
+    font-size:0.85rem;
+    opacity:0.9;
+  }
+  nav.tabs{
+    display:flex;
+    overflow-x:auto;
+    gap:8px;
+    padding:12px 12px 0;
+    max-width:760px;
+    margin:0 auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  nav.tabs::-webkit-scrollbar{display:none;}
+  nav.tabs button{
+    flex:0 0 auto;
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--text-soft);
+    padding:10px 14px;
+    border-radius:999px;
+    font-size:0.85rem;
+    font-weight:600;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  nav.tabs button.active{
+    background:var(--brand);
+    border-color:var(--brand);
+    color:#fff;
+  }
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:18px 14px 0;
+  }
+  .panel{display:none;}
+  .panel.active{display:block;}
+  .card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:20px;
+    margin-bottom:16px;
+  }
+  .progress-bar-wrap{
+    background:var(--border);
+    border-radius:999px;
+    height:8px;
+    overflow:hidden;
+    margin-top:8px;
+  }
+  .progress-bar{
+    background:var(--accent);
+    height:100%;
+    border-radius:999px;
+    transition:width .3s ease;
+  }
+  .stat-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:0.8rem;
+    color:var(--text-soft);
+    margin-bottom:4px;
+  }
+  .tag{
+    display:inline-block;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:0.7rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    padding:4px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+  .question-text{
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--text);
+    margin:0 0 16px;
+  }
+  textarea, input[type=text]{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px;
+    font-size:0.95rem;
+    font-family:inherit;
+    resize:vertical;
+    background:#fbfbfd;
+    color:var(--text);
+  }
+  textarea:focus, input[type=text]:focus{
+    outline:2px solid var(--brand);
+    outline-offset:1px;
+    background:#fff;
+  }
+  .btn-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:14px;
+  }
+  button.btn{
+    border:none;
+    border-radius:10px;
+    padding:11px 18px;
+    font-size:0.9rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:filter .15s, transform .05s;
+  }
+  button.btn:active{transform:scale(0.98);}
+  .btn-primary{background:var(--brand);color:#fff;}
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-secondary{background:var(--brand-soft);color:var(--brand-dark);}
+  .btn-secondary:hover{filter:brightness(0.97);}
+  .btn-accent{background:var(--accent);color:#fff;}
+  .btn-accent:hover{filter:brightness(1.06);}
+  .btn-ghost{background:transparent;color:var(--text-soft);border:1px solid var(--border);}
+  .btn-ok{background:var(--ok);color:#fff;}
+  .btn-error{background:var(--error);color:#fff;}
+  .model-answer{
+    margin-top:16px;
+    background:var(--brand-soft);
+    border-left:4px solid var(--brand);
+    border-radius:10px;
+    padding:14px 16px;
+    font-size:0.92rem;
+    color:var(--brand-dark);
+    display:none;
+  }
+  .model-answer.show{display:block;}
+  .model-answer strong{display:block;margin-bottom:6px;font-size:0.75rem;text-transform:uppercase;letter-spacing:.03em;}
+  .wrong-sentence{
+    font-size:1.05rem;
+    font-weight:600;
+    margin:0 0 6px;
+  }
+  .wrong-sentence .err{
+    text-decoration:underline wavy var(--error);
+    text-decoration-thickness:2px;
+  }
+  .hint{
+    font-size:0.8rem;
+    color:var(--text-soft);
+    margin-bottom:14px;
+  }
+  .feedback-box{
+    margin-top:16px;
+    border-radius:10px;
+    padding:14px 16px;
+    display:none;
+  }
+  .feedback-box.show{display:block;}
+  .feedback-box.ok{background:var(--ok-soft);border-left:4px solid var(--ok);}
+  .correct-sentence{
+    font-weight:700;
+    margin:0 0 8px;
+    color:var(--text);
+  }
+  .explanation{
+    font-size:0.88rem;
+    color:var(--text-soft);
+    margin:0;
+  }
+  .self-check{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  footer.section{
+    text-align:center;
+    padding:24px 14px 6px;
+    color:var(--text-soft);
+    font-size:0.8rem;
+  }
+  .reset-btn{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--text-soft);
+    border-radius:10px;
+    padding:8px 14px;
+    font-size:0.8rem;
+    cursor:pointer;
+    margin-top:8px;
+  }
+  .placeholder{
+    text-align:center;
+    padding:30px 10px;
+  }
+  .placeholder h3{margin:0 0 8px;color:var(--text);}
+  .placeholder p{color:var(--text-soft);font-size:0.9rem;margin:0 0 16px;}
+  .preview-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    text-align:left;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+  .preview-list li{
+    background:var(--bg);
+    border-radius:8px;
+    padding:8px 12px;
+    font-size:0.85rem;
+    color:var(--text-soft);
+  }
+  .preview-list b{color:var(--text);}
+  .mic-btn{position:relative;}
+  .mic-btn.recording{
+    background:var(--error-soft);
+    color:var(--error);
+    border-color:var(--error);
+  }
+  .mic-btn.recording::before{
+    content:"";
+    display:inline-block;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--error);
+    margin-right:6px;
+    animation:pulse 1s infinite;
+  }
+  @keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:.3;}
+    100%{opacity:1;}
+  }
+  .mic-note{
+    font-size:0.78rem;
+    color:var(--text-soft);
+    margin:8px 0 0;
+    min-height:1em;
+  }
+  @media (min-width:520px){
+    .preview-list{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎯 English for Interviews</h1>
+  <p>Marketing freelance · Práctica de entrevista en inglés</p>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="flashcards" class="active">💬 Preguntas</button>
+  <button data-tab="corrector">✏️ Corrector</button>
+  <button data-tab="vocab">📚 Vocabulario</button>
+  <button data-tab="roleplay">🎭 Simulador</button>
+  <button data-tab="pronunciation">🔊 Pronunciación</button>
+</nav>
+
+<main>
+
+  <!-- MODE 1: FLASHCARDS -->
+  <section class="panel active" id="panel-flashcards">
+    <div class="card">
+      <div class="stat-row">
+        <span id="fc-progress-label">0 / 0 practicadas</span>
+        <span id="fc-count-label"></span>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar" id="fc-progress-bar" style="width:0%"></div></div>
+    </div>
+
+    <div class="card">
+      <span class="tag" id="fc-category">Category</span>
+      <p class="question-text" id="fc-question">Loading...</p>
+      <textarea id="fc-answer" rows="5" placeholder="Escribe tu respuesta en inglés aquí, o usa el micrófono para hablar..."></textarea>
+      <div class="btn-row">
+        <button class="btn btn-ghost mic-btn" id="fc-mic-btn">🎤 Hablar respuesta</button>
+        <button class="btn btn-secondary" id="fc-show-answer">Show model answer</button>
+        <button class="btn btn-primary" id="fc-next">Next question →</button>
+      </div>
+      <p class="mic-note" id="fc-mic-note"></p>
+      <div class="model-answer" id="fc-model-answer">
+        <strong>Model answer</strong>
+        <span id="fc-model-text"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODE 2: CORRECTOR -->
+  <section class="panel" id="panel-corrector">
+    <div class="card">
+      <div class="stat-row">
+        <span id="cor-progress-label">0 / 0 revisadas</span>
+        <span id="cor-accuracy-label"></span>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar" id="cor-progress-bar" style="width:0%"></div></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Find &amp; fix the error</span>
+      <p class="wrong-sentence" id="cor-wrong-sentence">Loading...</p>
+      <p class="hint">Esta frase tiene un error típico de un hispanohablante. Escríbela corregida abajo.</p>
+      <input type="text" id="cor-input" placeholder="Escribe la frase corregida...">
+      <div class="btn-row">
+        <button class="btn btn-secondary" id="cor-check">Check answer</button>
+        <button class="btn btn-primary" id="cor-next">Next sentence →</button>
+      </div>
+      <div class="feedback-box ok" id="cor-feedback">
+        <p class="correct-sentence" id="cor-correct-sentence"></p>
+        <p class="explanation" id="cor-explanation"></p>
+        <div class="self-check" id="cor-self-check">
+          <button class="btn btn-ok" id="cor-mark-correct">✓ Lo tenía bien</button>
+          <button class="btn btn-error" id="cor-mark-wrong">✗ Me equivoqué</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODE 3: VOCAB (placeholder / preview) -->
+  <section class="panel" id="panel-vocab">
+    <div class="card placeholder">
+      <h3>📚 Vocabulario de negocios/marketing</h3>
+      <p>Próximamente: tarjetas + modo quiz con términos como los de abajo. De momento, aquí tienes un adelanto para ir familiarizándote.</p>
+      <ul class="preview-list" id="vocab-preview"></ul>
+    </div>
+  </section>
+
+  <!-- MODE 4: ROLEPLAY (placeholder) -->
+  <section class="panel" id="panel-roleplay">
+    <div class="card placeholder">
+      <h3>🎭 Simulador de entrevista</h3>
+      <p>Próximamente: una secuencia guiada de preguntas (introducción → experiencia → logros → fortalezas/debilidades → cierre) con resumen final exportable.</p>
+    </div>
+  </section>
+
+  <!-- MODE 5: PRONUNCIATION (placeholder) -->
+  <section class="panel" id="panel-pronunciation">
+    <div class="card placeholder">
+      <h3>🔊 Pronunciación / frases clave</h3>
+      <p>Próximamente: escucha frases profesionales clave con Web Speech API y practica tu pronunciación.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="section">
+  <div>Tu progreso se guarda automáticamente en este dispositivo.</div>
+  <button class="reset-btn" id="reset-progress">Reset progreso</button>
+</footer>
+
+<script>
+(function(){
+
+/* ============ DATA: FLASHCARD QUESTIONS ============ */
+const questions = [
+  {
+    id:"q1", category:"Introduction",
+    q:"Can you walk me through your background?",
+    a:"Sure. I'm a freelance marketing consultant based in Mallorca, Spain. I studied Business Administration in Barcelona and later completed a master's degree in Marketing. I spent two years working at a marketing agency, where I built a strong foundation in digital strategy, and for the past few years I've been running my own freelance practice, helping small and medium businesses — mostly in tourism and hospitality — grow through digital marketing."
+  },
+  {
+    id:"q2", category:"Motivation",
+    q:"Why did you become a freelance marketing consultant?",
+    a:"After two years at the agency, I realized I wanted more direct contact with clients and more ownership over results. Going freelance let me choose the projects I'm passionate about, work closely with business owners, and see the real impact of my strategies, from Google Ads campaigns to full digital transformations."
+  },
+  {
+    id:"q3", category:"Background",
+    q:"What's your educational background in marketing?",
+    a:"I have a degree in Business Administration from Barcelona and a master's degree in Marketing. That combination gives me both the strategic, numbers-driven side of business and the creative, customer-focused side of marketing, which is very useful when I'm advising clients on budgets and ROI."
+  },
+  {
+    id:"q4", category:"Experience",
+    q:"Tell me about your experience working at a marketing agency.",
+    a:"I worked at a marketing agency for two years, where I managed paid campaigns and social media for several clients at once. It taught me how to work under pressure, meet deadlines, and collaborate with designers, copywriters, and account managers as part of a bigger team."
+  },
+  {
+    id:"q5", category:"Motivation",
+    q:"Why did you decide to go freelance after the agency?",
+    a:"I wanted to specialize in the tourism and hospitality sector, which the agency didn't focus on, and I wanted to build long-term relationships with a smaller number of clients rather than juggling too many accounts. Freelancing also gave me the flexibility to live and work from Mallorca."
+  },
+  {
+    id:"q6", category:"Strengths",
+    q:"What's your greatest strength as a marketing consultant?",
+    a:"I'd say it's my ability to connect strategy with measurable results. I don't just run campaigns — I set clear KPIs from the start and constantly optimize based on data. For example, I helped a local restaurant increase bookings by 50% by combining Google Business Profile optimization, a booking engine, and targeted Google Ads."
+  },
+  {
+    id:"q7", category:"Weaknesses",
+    q:"What's your biggest weakness, and how do you manage it?",
+    a:"I used to take on too many small tasks myself instead of delegating or using automation. I've addressed this by building templates, using project management tools, and being more selective about the clients and projects I take on, so I can focus on high-impact work."
+  },
+  {
+    id:"q8", category:"Achievements",
+    q:"Can you describe a project where you achieved measurable results?",
+    a:"Yes — I worked with a restaurant in Mallorca that had low visibility online. I optimized their Google Business Profile, implemented an online booking engine, and ran targeted Google Ads campaigns around local search intent. Within a few months, their bookings increased by 50%."
+  },
+  {
+    id:"q9", category:"Achievements",
+    q:"Tell me about a time you helped a client grow their business.",
+    a:"The clearest example is that same restaurant project. The owner wanted more direct bookings instead of relying on third-party platforms. By improving their local SEO, adding a booking engine to their website, and running Google Ads focused on high-intent local searches, we increased their bookings by 50% in under six months."
+  },
+  {
+    id:"q10", category:"Budget",
+    q:"How do you manage a client's marketing budget?",
+    a:"I usually start by understanding the client's goals and constraints, then allocate budget across channels based on expected ROI, testing smaller amounts first before scaling what works. I report on spend and results regularly so clients always know exactly where their money is going and why."
+  },
+  {
+    id:"q11", category:"Client management",
+    q:"How do you handle a client who is unhappy with results?",
+    a:"First, I listen carefully to understand their concerns and review the data together with them. Then I explain what's working, what isn't, and propose concrete changes. Transparency is key — I'd rather show honest numbers and a clear action plan than promise things I can't guarantee."
+  },
+  {
+    id:"q12", category:"Time management",
+    q:"How do you prioritize tasks when working with multiple clients?",
+    a:"I use a project management tool to track deadlines and deliverables for each client, and I prioritize based on urgency and business impact — for example, an ongoing ad campaign that needs daily monitoring takes priority over a report that isn't due for another week."
+  },
+  {
+    id:"q13", category:"Trends",
+    q:"How do you stay up to date with marketing trends?",
+    a:"I follow industry blogs and newsletters, take courses on new tools and platforms, and I'm part of a few marketing communities where professionals share case studies. Right now, for instance, I'm exploring SEO and GEO strategies to prepare a proposal for a winery client here in Mallorca."
+  },
+  {
+    id:"q14", category:"Tools",
+    q:"What tools and platforms do you use daily?",
+    a:"I work daily with Google Ads, Meta Ads, Google Analytics, and Google Business Profile. I also use CRM tools to manage leads and follow-ups, and project management software to keep client work organized and on schedule."
+  },
+  {
+    id:"q15", category:"Metrics",
+    q:"How do you measure the success of a marketing campaign?",
+    a:"It depends on the goal, but I generally look at metrics like conversion rate, cost per lead, ROI, and engagement. For the restaurant project, the key metric was bookings, so I tracked how many reservations came directly from our campaigns versus organic or third-party sources."
+  },
+  {
+    id:"q16", category:"Conflict",
+    q:"Describe a conflict with a client and how you resolved it.",
+    a:"I once had a client who wanted immediate results from an SEO strategy, which naturally takes months to show impact. I explained the realistic timeline, showed early leading indicators like impressions and rankings, and we agreed to run a short-term ads campaign alongside SEO to get faster visible results while the long-term strategy matured."
+  },
+  {
+    id:"q17", category:"Deadlines",
+    q:"How do you handle tight deadlines?",
+    a:"I break the project into smaller tasks, prioritize what has the biggest impact first, and communicate early with the client if a deadline looks unrealistic. I'd rather set clear expectations upfront than deliver rushed, low-quality work."
+  },
+  {
+    id:"q18", category:"Client management",
+    q:"What's your process for onboarding a new client?",
+    a:"I start with a discovery call to understand their business, goals, and current marketing efforts. Then I do a short audit of their online presence, propose a strategy with clear milestones, and agree on KPIs and reporting frequency before starting any campaign."
+  },
+  {
+    id:"q19", category:"Adaptability",
+    q:"How do you approach a new industry you haven't worked in before?",
+    a:"I research the industry, competitors, and target audience thoroughly before proposing anything. Right now, for example, I'm preparing a proposal for a winery in Mallorca focused on tourism marketing — Google Ads, Meta Ads, SEO and GEO, CRM, and review management — so I've been studying how wine tourism customers search and book experiences."
+  },
+  {
+    id:"q20", category:"Differentiation",
+    q:"What makes you different from other marketing freelancers or agencies?",
+    a:"I combine strategic thinking from my business background with hands-on execution across paid ads, SEO, and CRM. Because I work directly with each client rather than through account layers like an agency, communication is faster and strategies are more tailored to their specific business."
+  },
+  {
+    id:"q21", category:"Reporting",
+    q:"How do you communicate results and reports to clients?",
+    a:"I send regular reports — usually monthly — with clear visuals and plain-language explanations of what the numbers mean for their business, not just raw data. I also schedule short calls to walk through results and discuss next steps together."
+  },
+  {
+    id:"q22", category:"Failure",
+    q:"Tell me about a campaign that didn't go as planned. What did you learn?",
+    a:"Early on, I launched a Google Ads campaign with keywords that were too broad, which led to a high cost per lead and low-quality traffic. I learned to invest more time in keyword research and audience segmentation before launching, and now I always start with a smaller test budget before scaling."
+  },
+  {
+    id:"q23", category:"Scope",
+    q:"How do you handle scope creep or expanding client requests?",
+    a:"I set clear deliverables and milestones in the initial agreement, so if a client asks for extra work outside that scope, I can point to what was agreed and discuss whether it's a new project, an add-on, or something for a future phase."
+  },
+  {
+    id:"q24", category:"Rates",
+    q:"What are your rates and how do you justify them?",
+    a:"My rates are based on the scope of work and expected impact, not just hours worked. I justify them by showing past results — like increasing a client's bookings by 50% — and by being transparent about what's included, so clients understand the value behind the investment."
+  },
+  {
+    id:"q25", category:"Future",
+    q:"Where do you see yourself in five years?",
+    a:"I'd like to keep growing my freelance practice, specializing further in tourism and hospitality marketing, and potentially building a small team to handle larger projects, like the winery proposal I'm currently working on, while still keeping close, direct relationships with clients."
+  },
+  {
+    id:"q26", category:"Differentiation",
+    q:"Why should we work with you instead of an in-house marketing team?",
+    a:"I bring specialized, up-to-date expertise across multiple channels without the fixed cost of a full-time hire. Clients get senior-level strategy and hands-on execution, and I can scale my involvement up or down depending on their needs and season, which is especially useful in industries like tourism."
+  },
+  {
+    id:"q27", category:"Time management",
+    q:"How do you balance multiple client projects and deadlines?",
+    a:"I block dedicated time for each client every week, use a shared calendar for campaign launches and reports, and review priorities every Monday. This structure lets me stay responsive without letting any single client's work fall behind."
+  },
+  {
+    id:"q28", category:"Trends",
+    q:"What's a recent marketing trend you've implemented for a client?",
+    a:"I've been incorporating GEO — generative engine optimization — alongside traditional SEO, making sure client content is structured so it can be picked up by AI-powered search tools. I'm actually including this in the proposal I'm preparing for a winery client in Mallorca."
+  }
+];
+
+/* ============ DATA: CORRECTOR SENTENCES ============ */
+const corrections = [
+  {
+    id:"c1",
+    wrong:"I have worked as a freelancer since three years.",
+    correct:"I have worked as a freelancer for three years.",
+    explanation:"'Since' se usa con un punto en el tiempo (since 2022, since March). 'For' se usa con una duración (for three years)."
+  },
+  {
+    id:"c2",
+    wrong:"I worked in a marketing agency for two years.",
+    correct:"I worked at a marketing agency for two years.",
+    explanation:"Para referirse al lugar de trabajo (una empresa concreta) se usa 'at', no 'in'. 'In' se usa para sectores o industrias (I work in marketing)."
+  },
+  {
+    id:"c3",
+    wrong:"Actually, I work as a freelance marketing consultant.",
+    correct:"Currently, I work as a freelance marketing consultant.",
+    explanation:"'Actually' significa 'en realidad', no 'actualmente'. Para decir 'actualmente' en inglés se usa 'currently' o 'at the moment'."
+  },
+  {
+    id:"c4",
+    wrong:"I am agree with that strategy.",
+    correct:"I agree with that strategy.",
+    explanation:"'Agree' ya es un verbo en inglés, no un adjetivo, así que no lleva 'am/is/are' delante: 'I agree', no 'I am agree'."
+  },
+  {
+    id:"c5",
+    wrong:"I have 30 years.",
+    correct:"I am 30 years old.",
+    explanation:"En español decimos 'tengo X años', pero en inglés se usa el verbo 'to be': 'I am 30 years old', no 'I have 30 years'."
+  },
+  {
+    id:"c6",
+    wrong:"The success of the campaign depends of the budget.",
+    correct:"The success of the campaign depends on the budget.",
+    explanation:"El verbo 'depend' va seguido de la preposición 'on', no 'of': 'depend on', igual que 'depender de' en español pero con distinta preposición."
+  },
+  {
+    id:"c7",
+    wrong:"I have assisted to many marketing conferences.",
+    correct:"I have attended many marketing conferences.",
+    explanation:"'Asistir a' se traduce como 'attend' (sin preposición), no 'assist to'. 'Assist' en inglés significa 'ayudar'."
+  },
+  {
+    id:"c8",
+    wrong:"We discussed about the budget with the client.",
+    correct:"We discussed the budget with the client.",
+    explanation:"El verbo 'discuss' ya incluye el significado de 'hablar sobre', así que no lleva preposición después: 'discuss the budget', no 'discuss about'."
+  },
+  {
+    id:"c9",
+    wrong:"Can you explain me the process?",
+    correct:"Can you explain the process to me?",
+    explanation:"'Explain' no admite objeto indirecto sin preposición. Se dice 'explain something to someone', no 'explain me something'."
+  },
+  {
+    id:"c10",
+    wrong:"I am very sensible to client feedback.",
+    correct:"I am very sensitive to client feedback.",
+    explanation:"Falso amigo: 'sensible' en inglés significa 'sensato/prudente'. Para decir 'sensible' (que se afecta con facilidad) se usa 'sensitive'."
+  },
+  {
+    id:"c11",
+    wrong:"The actual budget for this campaign is $5,000.",
+    correct:"The current budget for this campaign is $5,000.",
+    explanation:"Falso amigo: 'actual' en inglés significa 'real/verdadero', no 'actual' en el sentido de 'presente'. Para eso se usa 'current'."
+  },
+  {
+    id:"c12",
+    wrong:"I realized a marketing campaign for a restaurant.",
+    correct:"I ran a marketing campaign for a restaurant.",
+    explanation:"Falso amigo: 'realize' significa 'darse cuenta', no 'realizar/llevar a cabo'. Para eso se usan verbos como 'run', 'carry out' o 'implement'."
+  },
+  {
+    id:"c13",
+    wrong:"I collected a lot of informations about the client.",
+    correct:"I collected a lot of information about the client.",
+    explanation:"'Information' es un sustantivo incontable en inglés, por lo que nunca lleva 's' ni artículo 'a': 'information', no 'informations'."
+  },
+  {
+    id:"c14",
+    wrong:"I gave him some advices about his online presence.",
+    correct:"I gave him some advice about his online presence.",
+    explanation:"'Advice' es incontable en inglés (no tiene plural). Si necesitas contar, se dice 'a piece of advice', no 'advices'."
+  },
+  {
+    id:"c15",
+    wrong:"The people is very happy with the results.",
+    correct:"The people are very happy with the results.",
+    explanation:"'People' se comporta como plural en inglés y concuerda con 'are', no con 'is', aunque en español 'la gente' sea singular."
+  },
+  {
+    id:"c16",
+    wrong:"I have increased bookings by 50% last year.",
+    correct:"I increased bookings by 50% last year.",
+    explanation:"Con una expresión de tiempo pasado y cerrado como 'last year', se usa el pasado simple, no el present perfect."
+  },
+  {
+    id:"c17",
+    wrong:"I have master's degree in marketing.",
+    correct:"I have a master's degree in marketing.",
+    explanation:"En inglés, los sustantivos contables en singular necesitan artículo: 'a master's degree', no 'master's degree' sin más."
+  },
+  {
+    id:"c18",
+    wrong:"I studied a Business Administration in Barcelona.",
+    correct:"I studied Business Administration in Barcelona.",
+    explanation:"Los nombres de carreras/materias usados de forma general no llevan artículo en inglés: 'Business Administration', sin 'a' delante."
+  },
+  {
+    id:"c19",
+    wrong:"I have much clients in the tourism sector.",
+    correct:"I have many clients in the tourism sector.",
+    explanation:"'Much' se usa con sustantivos incontables (much time, much money). Con sustantivos contables en plural, como 'clients', se usa 'many'."
+  },
+  {
+    id:"c20",
+    wrong:"I am responsible of the client's social media.",
+    correct:"I am responsible for the client's social media.",
+    explanation:"'Responsible' va seguido de la preposición 'for', no 'of': 'responsible for something'."
+  },
+  {
+    id:"c21",
+    wrong:"I arrived to the meeting late.",
+    correct:"I arrived at the meeting late.",
+    explanation:"El verbo 'arrive' se combina con 'at' (lugares concretos, como una reunión o un edificio) o 'in' (ciudades, países), pero nunca con 'to'."
+  }
+];
+
+/* ============ DATA: VOCAB PREVIEW ============ */
+const vocabPreview = [
+  {term:"Bookings", def:"Reservas"},
+  {term:"Visibility", def:"Visibilidad (online)"},
+  {term:"Engagement", def:"Interacción / nivel de interacción"},
+  {term:"ROI (Return on Investment)", def:"Retorno de la inversión"},
+  {term:"Lead", def:"Cliente potencial"},
+  {term:"Conversion rate", def:"Tasa de conversión"},
+  {term:"Stakeholder", def:"Parte interesada"},
+  {term:"Deliverable", def:"Entregable"},
+  {term:"Milestone", def:"Hito del proyecto"},
+  {term:"Follow-up", def:"Seguimiento"}
+];
+
+/* ============ STORAGE ============ */
+const STORAGE_KEY = "eng-interview-practice-v1";
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return { flashcardsSeen:{}, correctorSeen:{}, correctorCorrect:0, correctorAttempts:0 };
+}
+function saveState(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+let state = loadState();
+
+/* ============ TABS ============ */
+const tabButtons = document.querySelectorAll("nav.tabs button");
+tabButtons.forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    tabButtons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+    document.getElementById("panel-"+btn.dataset.tab).classList.add("active");
+  });
+});
+
+/* ============ FLASHCARDS LOGIC ============ */
+let fcCurrent = null;
+
+function pickRandomQuestion(){
+  let pool = questions.filter(q=>q.id !== (fcCurrent && fcCurrent.id));
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+
+function renderFlashcard(){
+  stopMicRecording();
+  fcCurrent = pickRandomQuestion();
+  document.getElementById("fc-category").textContent = fcCurrent.category;
+  document.getElementById("fc-question").textContent = fcCurrent.q;
+  document.getElementById("fc-answer").value = "";
+  document.getElementById("fc-model-answer").classList.remove("show");
+  document.getElementById("fc-model-text").textContent = fcCurrent.a;
+  updateFcProgress();
+}
+
+function updateFcProgress(){
+  const seenCount = Object.keys(state.flashcardsSeen).length;
+  document.getElementById("fc-progress-label").textContent = seenCount + " / " + questions.length + " practicadas";
+  document.getElementById("fc-count-label").textContent = "";
+  document.getElementById("fc-progress-bar").style.width = (seenCount/questions.length*100) + "%";
+}
+
+document.getElementById("fc-show-answer").addEventListener("click", ()=>{
+  document.getElementById("fc-model-answer").classList.add("show");
+  state.flashcardsSeen[fcCurrent.id] = true;
+  saveState();
+  updateFcProgress();
+});
+
+document.getElementById("fc-next").addEventListener("click", renderFlashcard);
+
+/* ============ FLASHCARDS: SPEECH-TO-TEXT MIC ============ */
+const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+const micBtn = document.getElementById("fc-mic-btn");
+const micNote = document.getElementById("fc-mic-note");
+let recognition = null;
+let isRecording = false;
+let micBaseText = "";
+
+if(!SpeechRecognitionAPI){
+  micBtn.disabled = true;
+  micBtn.style.opacity = "0.5";
+  micBtn.style.cursor = "not-allowed";
+  micNote.textContent = "El reconocimiento de voz no está disponible en este navegador (prueba con Chrome en Android o escritorio).";
+}else{
+  recognition = new SpeechRecognitionAPI();
+  recognition.lang = "en-US";
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  recognition.addEventListener("result", (event)=>{
+    let transcript = "";
+    for(let i=0; i<event.results.length; i++){
+      transcript += event.results[i][0].transcript;
+    }
+    const separator = micBaseText && !micBaseText.endsWith(" ") ? " " : "";
+    document.getElementById("fc-answer").value = micBaseText + separator + transcript;
+  });
+
+  recognition.addEventListener("error", (event)=>{
+    micNote.textContent = event.error === "not-allowed"
+      ? "Permiso de micrófono denegado. Actívalo en los ajustes del navegador para usar esta función."
+      : "No se ha podido escuchar el micrófono. Inténtalo de nuevo.";
+    stopMicRecording();
+  });
+
+  recognition.addEventListener("end", ()=>{
+    if(isRecording){
+      // stopped unexpectedly (e.g. silence timeout) — reset UI state
+      stopMicRecording();
+    }
+  });
+
+  micBtn.addEventListener("click", ()=>{
+    if(isRecording){
+      stopMicRecording();
+    }else{
+      startMicRecording();
+    }
+  });
+}
+
+function startMicRecording(){
+  micBaseText = document.getElementById("fc-answer").value;
+  micNote.textContent = "Escuchando... habla tu respuesta en inglés.";
+  try{
+    recognition.start();
+    isRecording = true;
+    micBtn.classList.add("recording");
+    micBtn.textContent = "⏹ Detener grabación";
+  }catch(e){
+    micNote.textContent = "No se ha podido iniciar el micrófono.";
+  }
+}
+
+function stopMicRecording(){
+  if(!isRecording) return;
+  isRecording = false;
+  micBtn.classList.remove("recording");
+  micBtn.textContent = "🎤 Hablar respuesta";
+  if(micNote.textContent.indexOf("denegado") === -1 && micNote.textContent.indexOf("escuchar") === -1){
+    micNote.textContent = "";
+  }
+  if(recognition){
+    try{ recognition.stop(); }catch(e){}
+  }
+}
+
+/* ============ CORRECTOR LOGIC ============ */
+let corCurrent = null;
+
+function pickRandomCorrection(){
+  let pool = corrections.filter(c=>c.id !== (corCurrent && corCurrent.id));
+  return pool[Math.floor(Math.random()*pool.length)];
+}
+
+function renderCorrection(){
+  corCurrent = pickRandomCorrection();
+  document.getElementById("cor-wrong-sentence").textContent = corCurrent.wrong;
+  document.getElementById("cor-input").value = "";
+  document.getElementById("cor-feedback").classList.remove("show");
+  document.getElementById("cor-self-check").style.display = "flex";
+  updateCorProgress();
+}
+
+function updateCorProgress(){
+  const seenCount = Object.keys(state.correctorSeen).length;
+  const acc = state.correctorAttempts > 0
+    ? Math.round((state.correctorCorrect/state.correctorAttempts)*100)
+    : 0;
+  document.getElementById("cor-progress-label").textContent = seenCount + " / " + corrections.length + " revisadas";
+  document.getElementById("cor-accuracy-label").textContent = state.correctorAttempts > 0 ? ("Precisión: " + acc + "%") : "";
+  document.getElementById("cor-progress-bar").style.width = (seenCount/corrections.length*100) + "%";
+}
+
+document.getElementById("cor-check").addEventListener("click", ()=>{
+  document.getElementById("cor-correct-sentence").textContent = corCurrent.correct;
+  document.getElementById("cor-explanation").textContent = corCurrent.explanation;
+  document.getElementById("cor-feedback").classList.add("show");
+  state.correctorSeen[corCurrent.id] = true;
+  saveState();
+  updateCorProgress();
+});
+
+document.getElementById("cor-mark-correct").addEventListener("click", ()=>{
+  state.correctorAttempts += 1;
+  state.correctorCorrect += 1;
+  saveState();
+  updateCorProgress();
+  document.getElementById("cor-self-check").style.display = "none";
+});
+
+document.getElementById("cor-mark-wrong").addEventListener("click", ()=>{
+  state.correctorAttempts += 1;
+  saveState();
+  updateCorProgress();
+  document.getElementById("cor-self-check").style.display = "none";
+});
+
+document.getElementById("cor-next").addEventListener("click", renderCorrection);
+
+/* ============ VOCAB PREVIEW RENDER ============ */
+function renderVocabPreview(){
+  const ul = document.getElementById("vocab-preview");
+  ul.innerHTML = "";
+  vocabPreview.forEach(v=>{
+    const li = document.createElement("li");
+    li.innerHTML = "<b>" + v.term + "</b> — " + v.def;
+    ul.appendChild(li);
+  });
+}
+
+/* ============ RESET PROGRESS ============ */
+document.getElementById("reset-progress").addEventListener("click", ()=>{
+  if(confirm("¿Seguro que quieres borrar todo tu progreso guardado?")){
+    localStorage.removeItem(STORAGE_KEY);
+    state = loadState();
+    updateFcProgress();
+    updateCorProgress();
+  }
+});
+
+/* ============ INIT ============ */
+renderFlashcard();
+renderCorrection();
+renderVocabPreview();
+
+})();
+</script>
+
+</body>
+</html>
