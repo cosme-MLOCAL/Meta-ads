@@ -260,6 +260,32 @@
     color:var(--text-soft);
   }
   .preview-list b{color:var(--text);}
+  .mic-btn{position:relative;}
+  .mic-btn.recording{
+    background:var(--error-soft);
+    color:var(--error);
+    border-color:var(--error);
+  }
+  .mic-btn.recording::before{
+    content:"";
+    display:inline-block;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--error);
+    margin-right:6px;
+    animation:pulse 1s infinite;
+  }
+  @keyframes pulse{
+    0%{opacity:1;}
+    50%{opacity:.3;}
+    100%{opacity:1;}
+  }
+  .mic-note{
+    font-size:0.78rem;
+    color:var(--text-soft);
+    margin:8px 0 0;
+    min-height:1em;
+  }
   @media (min-width:520px){
     .preview-list{grid-template-columns:1fr 1fr;}
   }
@@ -295,11 +321,13 @@
     <div class="card">
       <span class="tag" id="fc-category">Category</span>
       <p class="question-text" id="fc-question">Loading...</p>
-      <textarea id="fc-answer" rows="5" placeholder="Escribe tu respuesta en inglés aquí..."></textarea>
+      <textarea id="fc-answer" rows="5" placeholder="Escribe tu respuesta en inglés aquí, o usa el micrófono para hablar..."></textarea>
       <div class="btn-row">
+        <button class="btn btn-ghost mic-btn" id="fc-mic-btn">🎤 Hablar respuesta</button>
         <button class="btn btn-secondary" id="fc-show-answer">Show model answer</button>
         <button class="btn btn-primary" id="fc-next">Next question →</button>
       </div>
+      <p class="mic-note" id="fc-mic-note"></p>
       <div class="model-answer" id="fc-model-answer">
         <strong>Model answer</strong>
         <span id="fc-model-text"></span>
@@ -695,6 +723,7 @@ function pickRandomQuestion(){
 }
 
 function renderFlashcard(){
+  stopMicRecording();
   fcCurrent = pickRandomQuestion();
   document.getElementById("fc-category").textContent = fcCurrent.category;
   document.getElementById("fc-question").textContent = fcCurrent.q;
@@ -719,6 +748,83 @@ document.getElementById("fc-show-answer").addEventListener("click", ()=>{
 });
 
 document.getElementById("fc-next").addEventListener("click", renderFlashcard);
+
+/* ============ FLASHCARDS: SPEECH-TO-TEXT MIC ============ */
+const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+const micBtn = document.getElementById("fc-mic-btn");
+const micNote = document.getElementById("fc-mic-note");
+let recognition = null;
+let isRecording = false;
+let micBaseText = "";
+
+if(!SpeechRecognitionAPI){
+  micBtn.disabled = true;
+  micBtn.style.opacity = "0.5";
+  micBtn.style.cursor = "not-allowed";
+  micNote.textContent = "El reconocimiento de voz no está disponible en este navegador (prueba con Chrome en Android o escritorio).";
+}else{
+  recognition = new SpeechRecognitionAPI();
+  recognition.lang = "en-US";
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  recognition.addEventListener("result", (event)=>{
+    let transcript = "";
+    for(let i=0; i<event.results.length; i++){
+      transcript += event.results[i][0].transcript;
+    }
+    const separator = micBaseText && !micBaseText.endsWith(" ") ? " " : "";
+    document.getElementById("fc-answer").value = micBaseText + separator + transcript;
+  });
+
+  recognition.addEventListener("error", (event)=>{
+    micNote.textContent = event.error === "not-allowed"
+      ? "Permiso de micrófono denegado. Actívalo en los ajustes del navegador para usar esta función."
+      : "No se ha podido escuchar el micrófono. Inténtalo de nuevo.";
+    stopMicRecording();
+  });
+
+  recognition.addEventListener("end", ()=>{
+    if(isRecording){
+      // stopped unexpectedly (e.g. silence timeout) — reset UI state
+      stopMicRecording();
+    }
+  });
+
+  micBtn.addEventListener("click", ()=>{
+    if(isRecording){
+      stopMicRecording();
+    }else{
+      startMicRecording();
+    }
+  });
+}
+
+function startMicRecording(){
+  micBaseText = document.getElementById("fc-answer").value;
+  micNote.textContent = "Escuchando... habla tu respuesta en inglés.";
+  try{
+    recognition.start();
+    isRecording = true;
+    micBtn.classList.add("recording");
+    micBtn.textContent = "⏹ Detener grabación";
+  }catch(e){
+    micNote.textContent = "No se ha podido iniciar el micrófono.";
+  }
+}
+
+function stopMicRecording(){
+  if(!isRecording) return;
+  isRecording = false;
+  micBtn.classList.remove("recording");
+  micBtn.textContent = "🎤 Hablar respuesta";
+  if(micNote.textContent.indexOf("denegado") === -1 && micNote.textContent.indexOf("escuchar") === -1){
+    micNote.textContent = "";
+  }
+  if(recognition){
+    try{ recognition.stop(); }catch(e){}
+  }
+}
 
 /* ============ CORRECTOR LOGIC ============ */
 let corCurrent = null;
