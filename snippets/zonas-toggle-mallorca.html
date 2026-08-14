@@ -1,0 +1,55 @@
+<div class="jm-zonas-toggle">
+  <button type="button" class="elementor-button elementor-button-link elementor-size-sm jm-zonas-btn" id="jm-zonas-btn" aria-expanded="false" aria-controls="jm-zonas-lista">
+    <span class="elementor-button-content-wrapper">
+      <span class="elementor-button-text">Ver más lugares de aparejador en Mallorca</span>
+    </span>
+  </button>
+
+  <ul class="jm-zonas-lista" id="jm-zonas-lista">
+    <li><a href="/aparejador_alcudia/">Aparejador en Alcúdia
+    </a></li>
+    <li><a href="https://joanmarch.com/aparejador-en-can-picafort-mallorca/">Aparejador en Can Picafort
+    </a></li>
+    <li><a href="https://joanmarch.com/aparejador-en-sa-pobla-mallorca/">Aparejador en Sa Pobla
+    </a></li>
+  </ul>
+</div>
+
+<style>
+.jm-zonas-lista a, .jm-zonas-lista a:visited { color: #000000 !important; text-decoration: none !important; } .jm-zonas-lista a:hover, .jm-zonas-lista a:focus { color: #808080 !important; }
+#jm-zonas-btn, #jm-zonas-btn:hover, #jm-zonas-btn:focus, #jm-zonas-btn:active, #jm-zonas-btn:visited { background-color: #ffffff !important; color: #000000 !important; border: none !important; box-shadow: none !important; }
+.jm-zonas-lista {
+  display: none;
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.jm-zonas-lista li {
+  margin: 0 0 12px;
+}
+.jm-zonas-lista.jm-zonas-visible {
+  display: block;
+}
+</style>
+
+<script>
+(function () {
+  var btn = document.getElementById('jm-zonas-btn');
+  var lista = document.getElementById('jm-zonas-lista');
+  var textoInicial = 'Ver más lugares de aparejador en Mallorca';
+  var textoAbierto = 'Ver menos';
+
+  if (!btn || !lista) return;
+
+  btn.addEventListener('click', function () {
+    var visible = lista.classList.toggle('jm-zonas-visible');
+    btn.setAttribute('aria-expanded', visible ? 'true' : 'false');
+    var span = btn.querySelector('.elementor-button-text');
+    if (span) {
+      span.textContent = visible ? textoAbierto : textoInicial;
+    } else {
+      btn.textContent = visible ? textoAbierto : textoInicial;
+    }
+  });
+})();
+</script>
